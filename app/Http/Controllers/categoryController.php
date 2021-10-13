@@ -42,7 +42,7 @@ class categoryController extends Controller
         $data['discount'] = $request -> discount;
         DB::table('products')->insert($data);
         Session::put('message', 'Thêm sản phẩm thành công');
-        return Redirect::to('add_category');
+        return Redirect::to('/admin/add_category');
     }
     public function edit_category($id_product){
         $this-> Authlogin();
