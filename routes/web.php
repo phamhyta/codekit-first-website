@@ -65,9 +65,19 @@ Route::get('/admin/delete_voucher/{id_voucher}', [voucherController::class, 'del
 
 //client route
 Route::get('/', [ProductController::class, 'home']);
+
 Route::get('/men', [ProductController::class,'index']);
+
 Route::get('/{product_name}/{id_product}/{id_product_detail}',[ProductController::class,'show']);
-Route::get('/test', function(){
-    return view('client.testDetail');
-});
+
+Route::get('/{product_name}/{id_product}/{id_product_detail}/{color_name}',[ProductController::class,'showByColor']);
+
 Route::get('/login',[ClientController::class,'login']);
+
+Route::get('/cart', function(){
+    return view('client.cart');
+});
+
+Route::get('/pay', function(){
+    return view('client.pay');
+});
