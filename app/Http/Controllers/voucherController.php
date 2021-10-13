@@ -39,14 +39,14 @@ class voucherController extends Controller
     public function save_voucher(Request $request){
         $this -> Authlogin();
         $data = array();
-        $data['voucher_desc'] = $request -> voucher_desc;
         $data['percent'] = $request -> percent;
         $data['decrease'] = $request -> decrease;
-        $data['create_at'] = $request -> create_at;
+        $data['effective_date'] = $request -> effective_date;
         $data['HSD'] = $request -> HSD;
+        $data['voucher_desc'] = $request -> voucher_desc;
         DB::table('voucher')->insert($data);
         Session::put('message', 'Thêm sản phẩm thành công');
-        return Redirect::to('add_voucher');
+        return Redirect::to('/admin/add_voucher');
     }
     public function edit_voucher($id_voucher){
         $this -> Authlogin();
