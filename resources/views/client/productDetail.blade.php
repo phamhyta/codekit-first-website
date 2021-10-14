@@ -68,22 +68,22 @@
                     {{ $products[0]->description }}
                 </div>
             </div>
-            <form action="{{ URL::to('/client/pay') }}" method="POST">
+            <form action="{{ URL::to('/client/cart') }}" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
-
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
                     <div class="tw-px-2 tw-flex">      
                         @foreach ($componentList as $component)
                             <a  href="/{{ $productName }}/{{ $component->id_product }}/{{ $component->id_product_detail }}/{{ $component->color_name }}">
                                 <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class="tw-p-1">
                             </a>
+                            <input type="hidden" value="{{$component->id_product}}" name="id_product" class="form-control">
                         @endforeach
                     </div>
                 </div>
                 <!-- Thanh chọn size -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6 tw-flex-wrap tw-font-normal tw-justify-center tw-inline-block tw-relative">
-                    <select class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline">
+                    <select name="size" class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline">
                         <option>Size:</option>
                         @foreach ($componentList as $component)
                             <option>{{ $component->product_size }}</option>
@@ -93,7 +93,7 @@
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
-            </form>
+            
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
