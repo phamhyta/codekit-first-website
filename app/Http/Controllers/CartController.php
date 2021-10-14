@@ -25,11 +25,11 @@ class CartController extends Controller
         ->join('productColor','productDetail.id_color',"=",'productColor.id_color')
         ->join('productClass','products.id_class',"=",'productClass.id_class')
         ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->paginate(16);
-        // $data['id_cus'] = $id_cus;
-        // $data['id_product_detail'] = $id_product_detail;
-        // $data['amount'] = $amount;
+        $data['id_cus'] = $id_cus;
+        $data['id_product_detail'] = $id_product_detail;
+        $data['amount'] = $amount;
         //dd($data);
-        return view('client.cart', ['product_info' => $product_info, 'color' => $color, 'size' => $size, 'id_product' => $id_product]);
+        return view('client.cart', ['product_info' => $product_info, 'color' => $color, 'size' => $size, 'id_product' => $id_product, 'amount' => $amount]);
     }
     // public function show_cart(Request $request){
     // $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 

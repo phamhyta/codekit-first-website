@@ -101,10 +101,79 @@
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
-                <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6 tw-flex-wrap tw-font-normal tw-justify-center tw-inline-block tw-relative">
-                    <label for="amount">Chọn so luong:</label>
-                    <input type="text" name="amount" id="amount" value="1">
+
+                {{-- Chọn số lượng --}}
+                <div class="custom-number-input tw-h-10 tw-w-32 tw-pb-32">
+                    <label for="custom-input-number" class="tw-w-full tw-text-gray-700 tw-text-sm tw-font-semibold">Số lượng:
+                    </label>
+                    <div class="tw-flex tw-flex-row tw-h-10 tw-w-full tw-rounded-lg tw-relative tw-bg-transparent tw-mt-1">
+                        <button data-action="decrement" class=" tw-bg-gray-50 tw-text-gray-600 hover:tw-text-gray-700 hover:tw-bg-gray-400 tw-h-full tw-w-20 tw-rounded-l tw-cursor-pointer tw-outline-none">
+                            <span class="tw-m-auto tw-text-2xl tw-font-thin">−</span>
+                        </button>
+                        <input type="number" class="tw-outline-none focus:tw-outline-none tw-text-center tw-w-full tw-bg-gray-300 tw-font-semibold tw-text-md hover:tw-text-black focus:tw-text-black  md:tw-text-basecursor-default tw-flex tw-items-center tw-text-gray-700  tw-outline-none" name="amount" value="1">
+                        <button data-action="increment" class="tw-bg-gray-300 tw-text-gray-600 hover:tw-text-gray-700 hover:tw-bg-gray-400 tw-h-full tw-w-20 tw-rounded-r tw-cursor-pointer">
+                        <span class="tw-m-auto tw-text-2xl tw-font-thin">+</span>
+                        </button>
+                  </div>
+                  
+                  <style>
+                    input[type='number']::-webkit-inner-spin-button,
+                    input[type='number']::-webkit-outer-spin-button {
+                      -webkit-appearance: none;
+                      margin: 0;
+                    }
+                  
+                    .custom-number-input input:focus {
+                      outline: none !important;
+                    }
+                  
+                    .custom-number-input button:focus {
+                      outline: none !important;
+                    }
+                  </style>
+                  
+                  <script>
+                    function decrement(e) {
+                      const btn = e.target.parentNode.parentElement.querySelector(
+                        'button[data-action="decrement"]'
+                      );
+                      const target = btn.nextElementSibling;
+                      let value = Number(target.value);
+                      value--;
+                      target.value = value;
+                    }
+                  
+                    function increment(e) {
+                      const btn = e.target.parentNode.parentElement.querySelector(
+                        'button[data-action="decrement"]'
+                      );
+                      const target = btn.nextElementSibling;
+                      let value = Number(target.value);
+                      value++;
+                      target.value = value;
+                    }
+                  
+                    const decrementButtons = document.querySelectorAll(
+                      button[data-action="decrement"]
+                    );
+                  
+                    const incrementButtons = document.querySelectorAll(
+                      button[data-action="increment"]
+                    );
+                  
+                    decrementButtons.forEach(btn => {
+                      btn.addEventListener("click", decrement);
+                    });
+                  
+                    incrementButtons.forEach(btn => {
+                      btn.addEventListener("click", increment);
+                    });
+                  </script>
                 </div>
+                {{-- <div class="tw-pb-8">
+                    <label for="amount">Số lượng:</label>
+                    <input class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" type="number" name="amount" id="amount" value="1">
+                </div> --}}
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">

@@ -29,7 +29,7 @@
                             <li class="tw-pb-3 tw-text-sm">{{ $pro_inf-> category_name }}</li>
                             <li class="tw-pb-2 tw-text-sm opacity-50">Color: {{$color}} </li>
                             <li class="tw-pb-2 tw-text-sm opacity-50">Size: {{$size}}</li>
-                            <li class="tw-pb-4 tw-text-sm opacity-50">Quantity 1</li>
+                            <li class="tw-pb-4 tw-text-sm opacity-50">Quantity: {{$amount}}</li>
                         </ul>
                         <div class=" tw-underline tw-font-bold tw-text-lg">{{ $pro_inf-> discount }}$</div>
                     </div>
