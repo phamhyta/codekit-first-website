@@ -42,7 +42,7 @@
               <th>Giá gốc</th>
               <th>Giảm giá</th>
               <th style="width:30px;"></th>
-            </tr>
+            </tr> 
           </thead>
           <tbody>
             @foreach ( $all_category as $key => $cate_pro)

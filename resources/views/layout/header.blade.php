@@ -121,7 +121,7 @@
                                   </div>
                                 </div>
                               </li>';
-                        session::put('username', null);
+                        //session::put('username', null);
                     }
                     else {
                        echo '<li><a class="tw-px-4" href="/signup">Join us</a></li>

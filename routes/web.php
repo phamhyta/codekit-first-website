@@ -79,4 +79,4 @@ Route::post('/client/cart', [CartController::class, 'save_cart']);
 
 
 //Pay route
-Route::post('/client/pay', [PayController::class, 'index']);
+Route::get('/client/pay', [PayController::class, 'index']);
