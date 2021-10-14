@@ -8,10 +8,10 @@
                 </header>
                 <div class="panel-body">
                     <?php
-                        $message = Session::get('message');
+                        $message = Session::get('detail_noti');
                         if($message){
                         echo $message;
-                        session::put('message', null);
+                        session::put('detail_noti', null);
                     }
                     ?>
                     @foreach ($edit_productdetail as $key => $edit_value)
@@ -27,12 +27,19 @@
                             <label for="color">Chọn màu: </label>
                             <select name="id_color" id="color" class="form-control input-sm m-bot15">
                                 @foreach ($colors as $color)
-
-                                <option value="{{ $color->id_color }}" class="tw-w-full tw-flex tw-whitespace-nowrap tw-justify-between" style="background-color: {{ $color->hex }}">
-                                    <div class="tw-w-5/12 tw-h-full tw-border-2">
-                                        {{ $color->color_name }}
-                                    </div>
-                                </option>
+                                    @if ($color->id_color == $edit_productdetail[0]->id_color)
+                                        <option value="{{ $color->id_color }}" selected class="tw-w-full tw-flex tw-whitespace-nowrap tw-justify-between" style="background-color: {{ $color->hex }}">
+                                            <div class="tw-w-5/12 tw-h-full tw-border-2">
+                                                {{ $color->color_name }}
+                                            </div>
+                                        </option>
+                                    @else
+                                        <option value="{{ $color->id_color }}" class="tw-w-full tw-flex tw-whitespace-nowrap tw-justify-between" style="background-color: {{ $color->hex }}">
+                                            <div class="tw-w-5/12 tw-h-full tw-border-2">
+                                                {{ $color->color_name }}
+                                            </div>
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>

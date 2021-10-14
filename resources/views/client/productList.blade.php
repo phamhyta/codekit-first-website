@@ -24,7 +24,7 @@
         Shoes selector
     </div>
     <div class="tw-flex tw-flex-row tw-flex-wrap tw-pr-5">
-        <img src="{{asset("img/anh_giay_nam/male_shoes(1).jpg")}}" alt="" class="tw-w-1/3 tw-h-full tw-object-contain">
+        <img src="{{asset("img/anh_giay_nam/male_shoes(1).png")}}" alt="" class="tw-w-1/3 tw-h-full tw-object-contain">
         
         <div class="tw-bg-gray-300 tw-w-4/6 tw-pt-14">
             <ul class="tw-flex tw-flex-wrap tw-font-normal tw-justify-center tw-w-full">

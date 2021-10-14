@@ -90,10 +90,198 @@
                 </select>
             </div>
             <ul class="tw-flex tw-flex-wrap tw-pt-1.5 tw-mr-5">
-                <li><a class="tw-px-4">Location</a></li>
                 <li><a class="tw-px-4">Help</a></li>
-                <li><a class="tw-px-4">Sign in</a></li>
+                <?php
+                    $username = Session::get('username');
+                    if($username){
+                        echo '<li>
+                                <div x-data="{show: false}" @click.away="show = false">
+                                  <button @click="show = ! show" class="tw-block tw-text-black tw-overflow-hidden">
+                                      <div class="tw-flex tw-justify-between">
+                                          <div class=" tw-flex tw-items-center">
+                                            <i class="far fa-user tw-pr-2"></i>
+                                              Hi, '.$username.'
+                                            <svg class="tw-fill-current tw-text-black" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                                <path d="M7 10l5 5 5-5z" />
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                            </svg>
+                                          </div> 
+                                          
+                                      </div>
+                                  </button>
+                                  <div x-show="show" class="tw-mt-2 tw-py-2 tw-bg-white tw-rounded-lg tw-shadow-xl tw-absolute tw-z-50">
+                                      <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
+                                        Profile
+                                        <i class="fas fa-user-edit"></i>
+                                      </a> 
+                                      <a href="/logout" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
+                                        Sign out
+                                        <i class="fas fa-sign-out-alt"></i>
+                                      </a>
+                                  </div>
+                                </div>
+                              </li>';
+                        session::put('username', null);
+                    }
+                    else {
+                       echo '<li><a class="tw-px-4" href="/signup">Join us</a></li>
+                            <li>
+                              <button class="tw-px-4 show-modal">
+                                Sign in
+                              </button>
+                            </li>';
+                    }
+                ?>
             </ul>
+            <!-- Sign in -->
+            <div class="modal tw-h-screen tw-w-full tw-fixed tw-left-0 tw-top-0 tw-z-50 tw-flex tw-justify-center tw-items-center tw-bg-black tw-bg-opacity-50 tw-hidden">
+              <div class=" tw-bg-no-repeat tw-bg-cover tw-rounded tw-shadow-2xl tw-w-1/2 tw-flex tw-justify-center" style="background-image: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png')">
+                  <div class="tw-w-1/2">
+                      <main class="tw-bg-transparent tw-max-w-lg tw-mx-auto tw-p-8 md:tw-p-12 tw-my-10 tw-rounded-lg tw-shadow-2xl">
+                          <section>
+                              <div class="tw-flex tw-justify-between">
+                                  <h3 class="tw-font-bold tw-text-3xl">Welcome to Nikadas</h3>
+                                  <button class="tw-text-black close-modal">&cross;</button>
+                              </div>
+                              <p class="tw-text-black tw-font-bold tw-pt-2">Sign in to your account.</p>
+                          </section>
+                  
+                          <section class="tw-mt-10">
+                              <form class="tw-flex tw-flex-col" method="POST" action="/signin">
+                                @csrf
+                                  <div class="tw-mb-6 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
+                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-2 tw-ml-3" for="email">Email</label>
+                                      <input type="text" id="email" name="email" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-3">
+                                  </div>
+                                  <div class="tw-mb-6 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
+                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-2 tw-ml-3" for="password">Password</label>
+                                      <input type="password" id="password" name="cus_password" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-3">
+                                  </div>
+                                  <div class="tw-flex tw-justify-end">
+                                      <a href="#" class=" tw-text-base tw-text-black tw-font-semibold hover:tw-text-black hover:tw-underline tw-mb-6">Forgot your password?</a>
+                                  </div>
+                                  <button class="tw-bg-black hover:tw-bg-white tw-text-white hover:tw-text-black tw-font-bold tw-py-2 tw-rounded tw-shadow-lg hover:tw-shadow-xl tw-transition tw-duration-200" type="submit">Sign In</button>
+                              </form>
+                          </section>
+                      </main>        
+
+                      <div class="tw-max-w-lg tw-mx-auto tw-text-center tw-mt-12 tw-mb-6">
+                          <p class="tw-text-black tw-font-medium">
+                              Don't have an account?
+                              <button class="tw-font-bold hover:tw-underline tw-outline-none sign-up">
+                                  Sign up
+                              </button>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <!-- Sign up -->
+            <div class="modal-sign-up tw-h-screen tw-w-full tw-fixed tw-left-0 tw-top-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-bg-black tw-bg-opacity-50 tw-hidden">
+              <div class="tw-bg-white tw-p-16 tw-rounded tw-shadow-2xl tw-w-1/3">
+                  <button class="tw-text-black close-modal-sign-up">&cross;</button>
+                  <h2 class="tw-text-3xl tw-font-bold tw-text-black tw-text-center">Create Your Account</h2>
+                  <div class=" tw-text-center tw-text-sm tw-text-gray-500 tw-mb-5">We gives you an extraordinary access to a world of products.</div>
+
+                  <form class="tw-space-y-3" method="POST" action="/signup">
+                    @csrf
+                      <div>
+                          <div>
+                              <div class=" tw-py-1">
+                                  <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Name</label>
+                                  <input type="text" name="fullname" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+                              <div class=" tw-py-1">
+                                  <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Gender</label>
+                                  <select name="gender" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                      <option value="Other">Other</option>
+                                  </select>
+                              </div>
+                              <div class=" tw-py-1">
+                                  <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Address</label>
+                                  <input type="text" name="address" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+                              <div class=" tw-py-1">
+                                  <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Phone number</label>
+                                  <input type="text" name="phone_number" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+                          </div>
+                      
+                          <div>
+                              <div class=" tw-py-1">
+                                <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Email</label>
+                                <input type="text" name="email" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+
+                              <div class=" tw-py-1">
+                                  <label class="tw-block tw-mb-1 tw-font-bold tw-text-gray-500">Username</label>
+                                  <input type="text" name="username" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+                              <div class=" tw-pt-1 tw-pb-5">
+                                  <label class="tw-block mb-1 tw-font-bold tw-text-gray-500">Password</label>
+                                  <input type="password" name="cus_password" class="tw-w-full tw-border-2 tw-border-gray-200 tw-p-3 tw-rounded tw-outline-none focus:tw-border-black">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tw-flex tw-items-center">
+                          <input type="checkbox" id="agree">
+                          <label for="agree" class="tw-ml-2 tw-text-gray-700 tw-text-sm">I agree to the terms and privacy.</label>
+                      </div>
+
+                      <button class="tw-block tw-w-full tw-bg-black tw-text-white tw-font-bold tw-py-2 tw-rounded tw-shadow-lg hover:tw-shadow-xl tw-transition tw-duration-200" type="submit">
+                          SIGN UP
+                      </button>
+                  </form>
+                  <div class="tw-max-w-lg tw-mx-auto tw-text-center tw-mt-12 tw-mb-6">
+                      <p class="tw-text-black tw-font-medium">
+                          Already a Member?
+                          <button class="tw-font-bold hover:tw-underline tw-outline-none sign-in">
+                              Sign in
+                          </button>
+                      </p>
+                  </div>
+              </div>
+            </div>
+            <script>
+              const modal = document.querySelector('.modal');
+              const modal_sign_up = document.querySelector('.modal-sign-up');
+              const showModal = document.querySelector('.show-modal');
+              const sign_in = document.querySelector('.sign-in');
+              const sign_up = document.querySelector('.sign-up');
+              const closeModal = document.querySelectorAll('.close-modal');
+              const closeModalSignUp = document.querySelectorAll('.close-modal-sign-up');
+
+              console.log(showModal);
+              console.log(sign_up);
+              console.log(sign_in);
+
+              showModal.addEventListener('click', function (){
+                  modal.classList.remove('tw-hidden')
+              });
+              sign_up.addEventListener('click', function(){
+                  modal_sign_up.classList.remove('tw-hidden');
+                  modal.classList.add('tw-hidden');
+              });
+              sign_in.addEventListener('click', function(){
+                  modal_sign_up.classList.add('tw-hidden');
+                  modal.classList.remove('tw-hidden');
+              });
+              closeModal.forEach(close => {
+                  close.addEventListener('click', function (){
+                      modal.classList.add('tw-hidden');
+                      console.log("Run here in sign in page");
+                  });
+              });
+              closeModalSignUp.forEach(close => {
+                  close.addEventListener('click', function (){
+                      modal_sign_up.classList.add('tw-hidden');
+                      console.log("Run here in sign up page");
+                  });
+              });
+
+            </script>
         </div>
         <div class="tw-container tw-mx-auto tw-flex tw-justify-between tw-w-full tw-items-center">
             <div class="tw-relative tw-block tw-p-4 lg:tw-p-6" >

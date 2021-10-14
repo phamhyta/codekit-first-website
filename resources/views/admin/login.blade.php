@@ -25,11 +25,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="w3layouts-main">
 	<h2>Đăng nhập</h2>
 	<?php
-		$message = Session::get('message');
+		$message = Session::get('login_noti');
 		if($message){
-		echo $message;
-		session::put('message', null);
-	}
+			echo $message;
+			session::put('login_noti', null);
+		}
 	?>
 		<form action="/admin/dashboard" method="post">
 			{{ csrf_field() }}
