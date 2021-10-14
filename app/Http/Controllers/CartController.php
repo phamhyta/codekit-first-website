@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
-    public function index(){
-        return view('client.cart');
+    public function index(Request $request){
+        
     }
 }

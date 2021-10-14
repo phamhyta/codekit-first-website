@@ -75,8 +75,8 @@ Route::get('/profile', [ClientController::class, 'show_profile']);
 
 
 //cart route
-Route::get('/client/cart', [CartController::class, 'index']);
+Route::post('/client/cart', [CartController::class, 'index']);
 
 
 //Pay route
-Route::get('/client/pay', [PayController::class, 'index']);
+Route::post('/client/pay', [PayController::class, 'index']);

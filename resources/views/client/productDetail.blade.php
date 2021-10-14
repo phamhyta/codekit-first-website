@@ -68,14 +68,15 @@
                     {{ $products[0]->description }}
                 </div>
             </div>
-            <form action="{{ URL::to('') }}" method="POST">
+            <form action="{{ URL::to('/client/pay') }}" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
+
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
                     <div class="tw-px-2 tw-flex">      
                         @foreach ($componentList as $component)
                             <a  href="/{{ $productName }}/{{ $component->id_product }}/{{ $component->id_product_detail }}/{{ $component->color_name }}">
-                                <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class=" tw-p-1">
+                                <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class="tw-p-1">
                             </a>
                         @endforeach
                     </div>
@@ -89,7 +90,6 @@
                         @endforeach
                     </select>
                     <div class="tw-flex tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-items-center tw-px-2 tw-text-gray-700">
-                        
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
@@ -97,10 +97,10 @@
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
-                        <form action="{{ URL::to('/client/pay') }}" method="GET">
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> </form>
-                        <form action="{{ URL::to('/client/cart') }}" method="GET">
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button> </form>
+                        {{-- <form action="{{ URL::to('/client/pay') }}" method="GET"> --}}
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> 
+                        {{-- <form action="{{ URL::to('/client/cart') }}" method="GET"> --}}
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button> 
 
                     </div>
                     <!-- Nút thêm vào yêu thích -->
