@@ -8,10 +8,10 @@
                 </header>
                 <div class="panel-body">
                     <?php
-                        $message = Session::get('message');
+                        $message = Session::get('category_noti');
                         if($message){
                         echo $message;
-                        session::put('message', null);
+                        session::put('category_noti', null);
                     }
                     ?>
                     <div class="position-center">
