@@ -54,7 +54,7 @@ class productdetailController extends Controller
         ($request -> thumbnail) ->move(public_path('img/anh_giay_nam'), $name);
 
         DB::table('productdetail')->insert($data);
-        Session::put('message', 'Thêm sản phẩm thành công');
+        Session::put('detail_noti', 'Thêm sản phẩm thành công');
         return Redirect::to('/admin/add_productdetail');
     }
 
@@ -81,18 +81,19 @@ class productdetailController extends Controller
         $data['id_color'] = $request -> id_color;
         $data['product_size'] = $request -> size;
         $data['url_image'] = json_encode($img_list);
-        $data['thumbnail'] = ($request -> thumbnail) ->getClientOriginalName(); 
-        ($request -> thumbnail) ->move(public_path('img/anh_giay_nam'), ($request -> thumbnail) ->getClientOriginalName());
-
+        if($request->file('thumbnail')){
+            $data['thumbnail'] = ($request -> thumbnail) ->getClientOriginalName(); 
+            ($request -> thumbnail) ->move(public_path('img/anh_giay_nam'), ($request -> thumbnail) ->getClientOriginalName());
+        }
         DB::table('productdetail')->where('id_product_detail', $id_product_detail) -> update($data);
-        Session::put('message', 'Cập nhật sản phẩm thành công');
+        Session::put('detail_noti', 'Cập nhật sản phẩm thành công');
         return Redirect::to('/admin/all_productdetail');
     }
     
     public function delete_productdetail($id_product_detail){
         $this-> Authlogin();
         DB::table('productdetail')->where('id_product_detail', $id_product_detail) -> delete();
-        Session::put('message', 'Xóa nhật sản phẩm thành công');
+        Session::put('detail_noti', 'Xóa nhật sản phẩm thành công');
         return Redirect::to('/admin/all_productdetail');
     }
 }

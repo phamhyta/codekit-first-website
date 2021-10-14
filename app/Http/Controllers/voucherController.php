@@ -45,7 +45,7 @@ class voucherController extends Controller
         $data['HSD'] = $request -> HSD;
         $data['voucher_desc'] = $request -> voucher_desc;
         DB::table('voucher')->insert($data);
-        Session::put('message', 'Thêm sản phẩm thành công');
+        Session::put('voucher_noti', 'Thêm voucher thành công');
         return Redirect::to('/admin/add_voucher');
     }
     public function edit_voucher($id_voucher){
@@ -64,13 +64,13 @@ class voucherController extends Controller
         $data['create_at'] = $request -> create_at;
         $data['HSD'] = $request -> HSD;
         DB::table('voucher')->where('id_voucher', $id_voucher) -> update($data);
-        Session::put('message', 'Cập nhật sản phẩm thành công');
-        return Redirect::to('all_voucher');
+        Session::put('voucher_noti', 'Cập nhật voucher thành công');
+        return Redirect::to('/admin/all_voucher');
     }
     public function delete_voucher($id_voucher){
         $this -> Authlogin();
         DB::table('voucher')->where('id_voucher', $id_voucher) -> delete();
-        Session::put('message', 'Xóa nhật sản phẩm thành công');
-        return Redirect::to('all_voucher');
+        Session::put('voucher_noti', 'Xóa nhật voucher thành công');
+        return Redirect::to('/admin/all_voucher');
     }
 }

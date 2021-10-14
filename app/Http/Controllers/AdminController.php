@@ -40,7 +40,7 @@ class AdminController extends Controller
             Session::put('admin_id', $result -> admin_id);
             return redirect::to('/admin/dashboard');
         }else{
-            session::put('message', 'Mật khẩu hoặc tài khoản sai');
+            session::put('login_noti', 'Mật khẩu hoặc tài khoản sai');
             return redirect::to('/admin/login');
         }
     }
