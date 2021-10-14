@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun Oct 10 2021 09:42:54 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* public/img/anh_giay_nam/nikadas-new-8.jpeg
+
+
+Created files:
+* .autogit/logs/log-10-9-2021-9-12-50.txt
+
+
+Deleted files:
+
+
+Renamed files:

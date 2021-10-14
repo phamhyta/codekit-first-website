@@ -60,10 +60,10 @@
                         {{ $productName }}
                     </h1>
                     <div class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-ml-1"> <!-- Giá sau khi giảm giá -->
-                        {{ $products[0]->discount }}
+                        {{ $products[0]->discount }}$
                     </div>
                     <div class="tw-text-sm tw-font-semibold tw-text-gray-500 tw-pl-2 tw-line-through"> <!-- Giá gốc -->
-                        {{ $products[0]->price }}
+                        {{ $products[0]->price }}$
                     </div>
                     <div class="tw-w-full tw-flex-none tw-text-sm tw-font-medium tw-text-gray-700"> <!-- Mô tả ngắn -->
                         {{ $products[0]->description }}
