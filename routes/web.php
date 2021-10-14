@@ -17,10 +17,6 @@ use App\Http\Controllers\productdetailController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('content.home');
-});
 //frontend
 Route::get('/admin/', [HomeController::class, 'index']);
 Route::get('/admin/home', [HomeController::class, 'index']);
@@ -72,7 +68,15 @@ Route::get('/{product_name}/{id_product}/{id_product_detail}',[ProductController
 
 Route::get('/{product_name}/{id_product}/{id_product_detail}/{color_name}',[ProductController::class,'showByColor']);
 
-Route::get('/login',[ClientController::class,'login']);
+Route::get('/signin',[ClientController::class,'show_sign_in']);
+
+Route::post('/signin', [ClientController::class, 'signIn']);
+
+Route::post('/signup', [ClientController::class, 'signUp']);
+
+Route::get('/signup', [ClientController::class, 'show_sign_up']);
+
+Route::get('/logout', [ClientController::class, 'logout']);
 
 Route::get('/cart', function(){
     return view('client.cart');
@@ -81,3 +85,6 @@ Route::get('/cart', function(){
 Route::get('/pay', function(){
     return view('client.pay');
 });
+
+Route::get('/profile', [ClientController::class, 'show_profile']);
+
