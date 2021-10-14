@@ -84,8 +84,9 @@
                     </div>
                 </div>
                 <?php
-                    $username = Session::get('username');
-                    echo $username;
+                    $id_cus = Session::get('id_cus');
+                    echo'
+                    <input type="hidden" value="{{$id_cus}}" name="id_cus" class="form-control">'
                 ?>
                 
                 <!-- Thanh chọn size -->
@@ -100,7 +101,10 @@
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
-            
+                <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6 tw-flex-wrap tw-font-normal tw-justify-center tw-inline-block tw-relative">
+                    <label for="amount">Chọn so luong:</label>
+                    <input type="text" name="amount" id="amount" value="1">
+                </div>
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
