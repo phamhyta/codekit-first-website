@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -28,6 +26,7 @@ class CartController extends Controller
         $data['id_cus'] = $id_cus;
         $data['id_product_detail'] = $id_product_detail;
         $data['amount'] = $amount;
+        DB::table('cart')->insert($data);
         //dd($data);
         return view('client.cart', ['product_info' => $product_info, 'color' => $color, 'size' => $size, 'id_product' => $id_product, 'amount' => $amount]);
     }
