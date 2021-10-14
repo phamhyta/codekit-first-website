@@ -53,23 +53,22 @@
         </script>
         <!-- Phần thông tin sản phẩm -->
         <div class="tw-w-4/12 tw-pl-8">
-            <form class="tw-flex-auto">
-                <!-- Thông tin -->
-                <div class="tw-flex tw-flex-wrap tw-pt-10">
-                    <h1 class="tw-flex-auto tw-text-3xl tw-font-semibold"> <!-- Tên sp -->
-                        {{ $productName }}
-                    </h1>
-                    <div class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-ml-1"> <!-- Giá sau khi giảm giá -->
-                        {{ $products[0]->discount }}$
-                    </div>
-                    <div class="tw-text-sm tw-font-semibold tw-text-gray-500 tw-pl-2 tw-line-through"> <!-- Giá gốc -->
-                        {{ $products[0]->price }}$
-                    </div>
-                    <div class="tw-w-full tw-flex-none tw-text-sm tw-font-medium tw-text-gray-700"> <!-- Mô tả ngắn -->
-                        {{ $products[0]->description }}
-                    </div>
+            <!-- Thông tin -->
+            <div class="tw-flex tw-flex-wrap tw-pt-10">
+                <h1 class="tw-flex-auto tw-text-3xl tw-font-semibold"> <!-- Tên sp -->
+                    {{ $productName }}
+                </h1>
+                <div class="tw-text-xl tw-font-semibold tw-text-gray-700 tw-ml-1"> <!-- Giá sau khi giảm giá -->
+                    {{ $products[0]->discount }}$
                 </div>
-            <form action="{{ URL::to('/cart') }}" method="POST">
+                <div class="tw-text-sm tw-font-semibold tw-text-gray-500 tw-pl-2 tw-line-through"> <!-- Giá gốc -->
+                    {{ $products[0]->price }}$
+                </div>
+                <div class="tw-w-full tw-flex-none tw-text-sm tw-font-medium tw-text-gray-700"> <!-- Mô tả ngắn -->
+                    {{ $products[0]->description }}
+                </div>
+            </div>
+            <form action="{{ URL::to('') }}" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
@@ -94,16 +93,16 @@
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
+            </form>
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
+                        <form action="{{ URL::to('/client/pay') }}" method="GET">
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> </form>
                         <form action="{{ URL::to('/client/cart') }}" method="GET">
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button></form>
-                        <form action="{{ URL::to('/client/cart') }}" method="GET">
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button></form>
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button> </form>
 
                     </div>
-            </form>
                     <!-- Nút thêm vào yêu thích -->
                     <div>
                         <button onclick="setColor()" id="btn" class="tw-flex tw-items-center tw-justify-center tw-w-full tw-h-9 tw-rounded-md tw-text-gray-400 tw-border tw-border-pink-900 tw-bg-white hover:tw-bg-gray-50" type="button" aria-label="like">

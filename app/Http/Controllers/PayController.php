@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Redirect;
 session_start();
 use Illuminate\Support\Facades\Session;
 
-class CartController extends Controller
+class PayController extends Controller
 {
     public function index(){
-        return view('client.cart');
+        return view('client.pay');
     }
 }

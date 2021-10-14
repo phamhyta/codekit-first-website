@@ -74,11 +74,11 @@
             <div class="tw-pl-10 tw-pt-5 tw-flex tw-pb-10">
                 <div class="tw-pr-6 tw-flex tw-w-1/2">
                     <div class="tw-w-2/3">Credit or Debit card</div>
-                    <div class="tw-w-1/3 ttw-ext-right">
+                    <div class="tw-w-1/3 tw-text-right">
                         <input type="radio" name="check">
                     </div>
                 </div>
-                <div class="tw-pl-6 flex w-1/2">
+                <div class="tw-pl-6 tw-flex tw-w-1/2">
                     <div class="tw-w-2/3">Paypal</div>
                     <div class="tw-w-1/3 tw-text-right">
                         <input type="radio" name="check">

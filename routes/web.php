@@ -8,6 +8,7 @@ use App\Http\Controllers\voucherController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productdetailController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PayController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,14 +71,12 @@ Route::post('/signin', [ClientController::class, 'signIn']);
 Route::post('/signup', [ClientController::class, 'signUp']);
 Route::get('/signup', [ClientController::class, 'show_sign_up']);
 Route::get('/logout', [ClientController::class, 'logout']);
-Route::get('/cart', function(){
-    return view('client.cart');
-});
-Route::get('/pay', function(){
-    return view('client.pay');
-});
 Route::get('/profile', [ClientController::class, 'show_profile']);
 
 
 //cart route
 Route::get('/client/cart', [CartController::class, 'index']);
+
+
+//Pay route
+Route::get('/client/pay', [PayController::class, 'index']);
