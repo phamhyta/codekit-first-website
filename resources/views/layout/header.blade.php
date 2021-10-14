@@ -135,9 +135,9 @@
             </ul>
             <!-- Sign in -->
             <div class="modal tw-h-screen tw-w-full tw-fixed tw-left-0 tw-top-0 tw-z-50 tw-flex tw-justify-center tw-items-center tw-bg-black tw-bg-opacity-50 tw-hidden">
-              <div class=" tw-bg-no-repeat tw-bg-cover tw-rounded tw-shadow-2xl tw-w-1/2 tw-flex tw-justify-center" style="background-image: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png')">
+              <div class=" tw-bg-no-repeat tw-bg-cover tw-rounded tw-shadow-2xl tw-h-2/3 tw-w-1/2 tw-flex tw-justify-center" style="background-image: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png')">
                   <div class="tw-w-1/2">
-                      <main class="tw-bg-transparent tw-max-w-lg tw-mx-auto tw-p-8 md:tw-p-12 tw-my-10 tw-rounded-lg tw-shadow-2xl">
+                      <main class="tw-bg-transparent tw-max-w-lg tw-mx-auto tw-p-1 md:tw-p-12 tw-my-10 tw-rounded-lg tw-shadow-2xl">
                           <section>
                               <div class="tw-flex tw-justify-between">
                                   <h3 class="tw-font-bold tw-text-3xl">Welcome to Nikadas</h3>
@@ -165,7 +165,7 @@
                           </section>
                       </main>        
 
-                      <div class="tw-max-w-lg tw-mx-auto tw-text-center tw-mt-12 tw-mb-6">
+                      <div class="tw-max-w-lg tw-mx-auto tw-text-center tw-mt-1 tw-mb-6">
                           <p class="tw-text-black tw-font-medium">
                               Don't have an account?
                               <button class="tw-font-bold hover:tw-underline tw-outline-none sign-up">
