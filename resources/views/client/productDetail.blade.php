@@ -78,6 +78,7 @@
                                 <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class="tw-p-1">
                             </a>
                             <input type="hidden" value="{{$component->id_product}}" name="id_product" class="form-control">
+                            <input type="hidden" value="{{$component->id_product_detail}}" name="id_product_detail" class="form-control">
                         @endforeach
                     </div>
                 </div>
