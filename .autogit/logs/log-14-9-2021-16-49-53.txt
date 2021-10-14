@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Thu Oct 14 2021 16:49:53 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/CartController.php
+* resources/views/client/pay.blade.php
+* resources/views/client/productDetail.blade.php
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-14-9-2021-16-19-43.txt
+* app/Http/Controllers/PayController.php
+
+
+Deleted files:
+
+
+Renamed files:
