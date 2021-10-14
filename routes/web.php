@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\voucherController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productdetailController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,30 +62,22 @@ Route::get('/admin/delete_voucher/{id_voucher}', [voucherController::class, 'del
 
 //client route
 Route::get('/', [ProductController::class, 'home']);
-
 Route::get('/men', [ProductController::class,'index']);
-
 Route::get('/{product_name}/{id_product}/{id_product_detail}',[ProductController::class,'show']);
-
 Route::get('/{product_name}/{id_product}/{id_product_detail}/{color_name}',[ProductController::class,'showByColor']);
-
 Route::get('/signin',[ClientController::class,'show_sign_in']);
-
 Route::post('/signin', [ClientController::class, 'signIn']);
-
 Route::post('/signup', [ClientController::class, 'signUp']);
-
 Route::get('/signup', [ClientController::class, 'show_sign_up']);
-
 Route::get('/logout', [ClientController::class, 'logout']);
-
 Route::get('/cart', function(){
     return view('client.cart');
 });
-
 Route::get('/pay', function(){
     return view('client.pay');
 });
-
 Route::get('/profile', [ClientController::class, 'show_profile']);
 
+
+//cart route
+Route::get('/client/cart', [CartController::class, 'index']);

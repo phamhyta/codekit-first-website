@@ -135,9 +135,9 @@
             </ul>
             <!-- Sign in -->
             <div class="modal tw-h-screen tw-w-full tw-fixed tw-left-0 tw-top-0 tw-z-50 tw-flex tw-justify-center tw-items-center tw-bg-black tw-bg-opacity-50 tw-hidden">
-              <div class=" tw-bg-no-repeat tw-bg-cover tw-rounded tw-shadow-2xl tw-h-2/3 tw-w-1/2 tw-flex tw-justify-center" style="background-image: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png')">
-                  <div class="tw-w-1/2">
-                      <main class="tw-bg-transparent tw-max-w-lg tw-mx-auto tw-p-1 md:tw-p-12 tw-my-10 tw-rounded-lg tw-shadow-2xl">
+              <div class=" tw-bg-no-repeat tw-bg-cover tw-rounded tw-shadow-2xl tw-h-3/4 tw-w-1/2 tw-flex tw-justify-center" style="background-image: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png')">
+                  <div class="tw-w-2/3">
+                      <main class="tw-bg-transparent tw-max-w-lg tw-mx-auto tw-p-1 md:tw-p-2 tw-my-10 tw-rounded-lg tw-shadow-2xl">
                           <section>
                               <div class="tw-flex tw-justify-between">
                                   <h3 class="tw-font-bold tw-text-3xl">Welcome to Nikadas</h3>
@@ -146,16 +146,16 @@
                               <p class="tw-text-black tw-font-bold tw-pt-2">Sign in to your account.</p>
                           </section>
                   
-                          <section class="tw-mt-10">
+                          <section class="tw-mt-4">
                               <form class="tw-flex tw-flex-col" method="POST" action="/signin">
                                 @csrf
-                                  <div class="tw-mb-6 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
-                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-2 tw-ml-3" for="email">Email</label>
-                                      <input type="text" id="email" name="email" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-3">
+                                  <div class="tw-mb-3 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
+                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-1 tw-ml-3" for="email">Email</label>
+                                      <input type="text" id="email" name="email" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-1">
                                   </div>
-                                  <div class="tw-mb-6 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
-                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-2 tw-ml-3" for="password">Password</label>
-                                      <input type="password" id="password" name="cus_password" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-3">
+                                  <div class="tw-mb-3 tw-pt-3 tw-rounded tw-bg-white tw-bg-opacity-50">
+                                      <label class="tw-block tw-text-black tw-text-sm tw-font-bold tw-mb-1 tw-ml-3" for="password">Password</label>
+                                      <input type="password" id="password" name="cus_password" class="tw-bg-transparent tw-bg-opacity-0 tw-rounded tw-w-full tw-text-black focus:tw-outline-none tw-border-b-4 tw-border-transparent focus:tw-border-white tw-transition tw-duration-500 tw-px-3 tw-pb-1">
                                   </div>
                                   <div class="tw-flex tw-justify-end">
                                       <a href="#" class=" tw-text-base tw-text-black tw-font-semibold hover:tw-text-black hover:tw-underline tw-mb-6">Forgot your password?</a>
