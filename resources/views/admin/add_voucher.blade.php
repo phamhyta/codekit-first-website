@@ -31,11 +31,11 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ngày có hiệu lực</label>
-                            <input type="datetime" name="create_at" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <input type="datetime-local" name="effective_date" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">HSD</label>
-                            <input type="datetime" name="HSD" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <input type="datetime-local" name="HSD" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
                         </div>
                         <button type="submit" name="add_voucher" class="btn btn-info">Thêm voucher</button>
                     </form>

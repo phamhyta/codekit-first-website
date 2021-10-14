@@ -74,33 +74,11 @@
                 <!-- Thanh chọn màu -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
                     <div class="tw-px-2 tw-flex">      
-                        @for ($i = 0; $i < count(json_decode($products[0]->url_image, true)); $i++) <!-- Mặc dù kết quả trả về chỉ có 1 thôi nma vì 1 lý do gì đó mà $products ở đây lại trả về dưới dạng array nên phải thêm index 0 để hoặt động!-->
-                            <button type="button">
-                                <img id="color{{ $i }}" onclick="setColor{{ $i }}()" class="tw-object-contain tw-h-20 tw-p-1 tw-flex tw-items-center tw-justify-center tw-rounded-lg" src="/img/anh_giay_nam/{{ json_decode($products[0]->url_image, true)[$i]  }}" alt="">
-                            </button>
-                        @endfor    
-                        <script>
-                            const colorList = [
-                                @foreach (json_decode($products[0]->url_image) as $img)
-                                    "color".concat({{ $loop->index }}),
-                                @endforeach
-                            ];
-                            let colorLength = colorList.length;
-                            console.log(colorLength);
-                            for (let i = 0; i < colorLength; i++) {
-                                var funcName = "setColor".concat(i);
-                                console.log('run here '.concat(i))
-                                funcName = function(){
-                                    console.log('run heree')
-                                    for (let i = 0; i < colorLength; i++){
-                                        colorList[i].style.border = "none"; 
-                                    }
-                                    colorList[i].style.border = "solid";
-                                };
-                                console.log(funcName())
-                            }
-                                
-                        </script>           
+                        @foreach ($componentList as $component)
+                            <a  href="/{{ $productName }}/{{ $component->id_product }}/{{ $component->id_product_detail }}/{{ $component->color_name }}">
+                                <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class=" tw-p-1">
+                            </a>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Thanh chọn size -->
@@ -111,7 +89,7 @@
                             <option>{{ $component->product_size }}</option>
                         @endforeach
                     </select>
-                    <div class="tw-flex tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-flex tw-items-center tw-px-2 tw-text-gray-700">
+                    <div class="tw-flex tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-items-center tw-px-2 tw-text-gray-700">
                         
                         <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
