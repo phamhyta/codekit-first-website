@@ -57,9 +57,10 @@
                 Subtotal
             </div>
             <div>
-                @foreach ( $product_info as $pro_inf )
-                    {{ $pro_inf->discount }}
+                @foreach ($total as $total )
+                    {{ $total->total }}
                 @endforeach
+                
             </div>
         </div>
         <div class="tw-flex tw-flex-row tw-justify-between tw-pb-5">
