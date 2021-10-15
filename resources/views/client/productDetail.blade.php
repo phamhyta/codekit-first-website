@@ -176,11 +176,15 @@
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
-                        {{-- <form action="{{ URL::to('/client/pay') }}" method="GET"> --}}
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> 
-                        {{-- <form action="{{ URL::to('/client/cart') }}" method="GET"> --}}
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button> 
-
+                        <form action="{{ URL::to('/client/pay') }}" method="GET"> 
+                            <?php
+                            $id_cus = Session::get('id_cus');
+                            echo'
+                            <input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">'
+                            ?>
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> </form>
+                        <form action="{{ URL::to('/client/cart') }}" method="GET"> 
+                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Add to bag</button> </form>
                     </div>
                     <!-- Nút thêm vào yêu thích -->
                     <div>

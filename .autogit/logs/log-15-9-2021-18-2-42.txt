@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 15 2021 18:02:42 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/CartController.php
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-15-9-2021-17-32-28.txt
+
+
+Deleted files:
+
+
+Renamed files:
