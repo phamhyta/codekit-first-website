@@ -75,11 +75,11 @@
                                             <h1 class="tw-flex-auto tw-text-l tw-font-semibold tw-text-white tw-pl-2"> <!-- Tên sp -->
                                                 <p>{{ $product->product_name }}</p>
                                             </h1>
-                                            <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-8"> <!-- Giá sau khi giảm giá -->
-                                                {{ $product->discount }}
+                                            <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-6 tw-pr-2"> <!-- Giá sau khi giảm giá -->
+                                                {{ $product->discount }}$
                                             </div>
                                             <div class="tw-text-sm tw-font-semibold tw-text-white tw-pl-2 tw-line-through tw-relative tw-float-left"> <!-- Giá gốc -->
-                                                {{ $product->price }}
+                                                {{ $product->price }}$
                                             </div>
                                         </div>
                                     </li>

@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 15 2021 16:32:11 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* public/img/anh_giay_nam/male_shoes(30).jpg
+* public/img/anh_giay_nam/male_shoes(64).jpg
+* public/img/anh_giay_nam/male_shoes(87).jpg
+* resources/views/client/cart.blade.php
+* resources/views/client/productList.blade.php
+
+
+Created files:
+* .autogit/logs/log-15-9-2021-16-2-11.txt
+
+
+Deleted files:
+
+
+Renamed files:
