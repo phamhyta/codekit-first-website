@@ -168,7 +168,7 @@
             @foreach ($products->unique('id_product') as $product)
               <li class="tw-my-5 tw-pr-5 tw-ml-0 tw-w-1/4">
                 <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
-                    <div>
+                    <div class="tw-h-full tw-w-full">
                         <img src="img/anh_giay_nam/{{ $product->thumbnail }}" alt="male shoes" class="tw-w-full tw-object-contain">
                     </div>
                     <div class="tw-bg-gray-700 tw-flex tw-justify-between tw-w-full">

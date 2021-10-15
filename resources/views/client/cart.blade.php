@@ -20,7 +20,7 @@
             <div class=" tw-flex tw-flex-row tw-bg-gray-200">
                 @foreach ( $product_info as $key => $pro_inf)
                     <div class="tw-w-1/4 tw-p-5">
-                        <img src="img/anh_giay_nam/male_shoes(1).png" alt="" class="tw-border tw-border-black tw-object-contain">
+                        <img src="img/anh_giay_nam/{{ $pro_inf-> url_image }}" alt="" class="tw-border tw-border-black tw-object-contain">
                     </div>
                     <div class="tw-w-3/4 tw-px-10 tw-py-5">
                         <div class="tw-flex tw-flex-row tw-justify-between">

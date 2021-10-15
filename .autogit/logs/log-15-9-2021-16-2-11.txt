@@ -1,0 +1,90 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 15 2021 16:02:11 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* public/img/anh_giay_nam/male_shoes(1).jpg
+* public/img/anh_giay_nam/male_shoes(10).jpg
+* public/img/anh_giay_nam/male_shoes(11).jpg
+* public/img/anh_giay_nam/male_shoes(14).jpg
+* public/img/anh_giay_nam/male_shoes(15).jpg
+* public/img/anh_giay_nam/male_shoes(16).jpg
+* public/img/anh_giay_nam/male_shoes(17).jpg
+* public/img/anh_giay_nam/male_shoes(18).jpg
+* public/img/anh_giay_nam/male_shoes(19).jpg
+* public/img/anh_giay_nam/male_shoes(2).jpg
+* public/img/anh_giay_nam/male_shoes(20).jpg
+* public/img/anh_giay_nam/male_shoes(21).jpg
+* public/img/anh_giay_nam/male_shoes(22).jpg
+* public/img/anh_giay_nam/male_shoes(24).jpg
+* public/img/anh_giay_nam/male_shoes(25).jpg
+* public/img/anh_giay_nam/male_shoes(26).jpg
+* public/img/anh_giay_nam/male_shoes(27).jpg
+* public/img/anh_giay_nam/male_shoes(28).jpg
+* public/img/anh_giay_nam/male_shoes(3).jpg
+* public/img/anh_giay_nam/male_shoes(32).jpg
+* public/img/anh_giay_nam/male_shoes(33).jpg
+* public/img/anh_giay_nam/male_shoes(34).jpg
+* public/img/anh_giay_nam/male_shoes(35).jpg
+* public/img/anh_giay_nam/male_shoes(36).jpg
+* public/img/anh_giay_nam/male_shoes(37).jpg
+* public/img/anh_giay_nam/male_shoes(39).jpg
+* public/img/anh_giay_nam/male_shoes(4).jpg
+* public/img/anh_giay_nam/male_shoes(40).jpg
+* public/img/anh_giay_nam/male_shoes(41).jpg
+* public/img/anh_giay_nam/male_shoes(42).jpg
+* public/img/anh_giay_nam/male_shoes(43).jpg
+* public/img/anh_giay_nam/male_shoes(45).jpg
+* public/img/anh_giay_nam/male_shoes(47).jpg
+* public/img/anh_giay_nam/male_shoes(48).jpg
+* public/img/anh_giay_nam/male_shoes(49).jpg
+* public/img/anh_giay_nam/male_shoes(5).jpg
+* public/img/anh_giay_nam/male_shoes(50).jpg
+* public/img/anh_giay_nam/male_shoes(51).jpg
+* public/img/anh_giay_nam/male_shoes(52).jpg
+* public/img/anh_giay_nam/male_shoes(53).jpg
+* public/img/anh_giay_nam/male_shoes(54).jpg
+* public/img/anh_giay_nam/male_shoes(55).jpg
+* public/img/anh_giay_nam/male_shoes(57).jpg
+* public/img/anh_giay_nam/male_shoes(58).jpg
+* public/img/anh_giay_nam/male_shoes(59).jpg
+* public/img/anh_giay_nam/male_shoes(6).jpg
+* public/img/anh_giay_nam/male_shoes(60).jpg
+* public/img/anh_giay_nam/male_shoes(61).jpg
+* public/img/anh_giay_nam/male_shoes(62).jpg
+* public/img/anh_giay_nam/male_shoes(67).jpg
+* public/img/anh_giay_nam/male_shoes(68).jpg
+* public/img/anh_giay_nam/male_shoes(69).jpg
+* public/img/anh_giay_nam/male_shoes(70).jpg
+* public/img/anh_giay_nam/male_shoes(71).jpg
+* public/img/anh_giay_nam/male_shoes(72).jpg
+* public/img/anh_giay_nam/male_shoes(73).jpg
+* public/img/anh_giay_nam/male_shoes(74).jpg
+* public/img/anh_giay_nam/male_shoes(76).jpg
+* public/img/anh_giay_nam/male_shoes(77).jpg
+* public/img/anh_giay_nam/male_shoes(8).jpg
+* public/img/anh_giay_nam/male_shoes(80).jpg
+* public/img/anh_giay_nam/male_shoes(81).jpg
+* public/img/anh_giay_nam/male_shoes(82).jpg
+* public/img/anh_giay_nam/male_shoes(86).jpg
+* public/img/anh_giay_nam/male_shoes(87).jpg
+* public/img/anh_giay_nam/male_shoes(89).jpg
+* public/img/anh_giay_nam/male_shoes(9).jpg
+* public/img/anh_giay_nam/male_shoes(90).jpg
+* public/img/anh_giay_nam/male_shoes(91).jpg
+* public/img/anh_giay_nam/male_shoes(92).jpg
+* public/img/anh_giay_nam/male_shoes(93).jpg
+* public/img/anh_giay_nam/male_shoes(94).jpg
+* public/img/anh_giay_nam/male_shoes(95).jpg
+* public/img/anh_giay_nam/male_shoes(96).jpg
+* public/img/anh_giay_nam/male_shoes(97).jpg
+
+
+Created files:
+* .autogit/logs/log-15-9-2021-15-31-45.txt
+
+
+Deleted files:
+
+
+Renamed files:
