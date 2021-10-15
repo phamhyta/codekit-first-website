@@ -38,6 +38,7 @@ class CartController extends Controller
         ->join('productColor','productDetail.id_color',"=",'productColor.id_color')
         ->join('productClass','products.id_class',"=",'productClass.id_class')
         ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->get();
+        dd($id_cus);
         return view('client.cart', ['product_info' => $product_info]);
     }
 }

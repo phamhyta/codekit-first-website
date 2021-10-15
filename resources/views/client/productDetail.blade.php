@@ -178,9 +178,9 @@
                     <div class="">
                         <form action="{{ URL::to('/client/pay') }}" method="GET"> 
                             <?php
-                            $id_cus = Session::get('id_cus');
-                            echo'
-                            <input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">'
+                                $id_cus = Session::get('id_cus');
+                                echo $id_cus;
+                                //<input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">
                             ?>
                         <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Buy now</button> </form>
                         <form action="{{ URL::to('/client/cart') }}" method="GET"> 
