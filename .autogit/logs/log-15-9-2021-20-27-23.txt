@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 15 2021 20:27:23 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/CartController.php
+* resources/views/client/productDetail.blade.php
+
+
+Created files:
+* .autogit/logs/log-15-9-2021-19-57-8.txt
+
+
+Deleted files:
+
+
+Renamed files:
