@@ -77,7 +77,7 @@ Route::get('/profile', [ClientController::class, 'show_profile']);
 //cart route
 Route::post('/cart', [CartController::class, 'save_cart']);
 Route::get('/cart/{id_cus}', [CartController::class, 'show_cart']);
-Route::post('cart/{id_cus}/{id_cart}', [CartController::class, 'delete_cart']);
+Route::post('/delete_cart/{id_cus}/{id_cart}', [CartController::class, 'delete_cart']);
 
 
 

@@ -46,7 +46,7 @@ class CartController extends Controller
         ->join('productClass','products.id_class',"=",'productClass.id_class')->skip(0)->take(28)->get();
         return view('client.cart', ['product_info' => $product_info, 'total' => $total, 'products' => $products]);
     }
-    public function delete_cart($id_cart, $id_cus){
+    public function delete_cart($id_cus, $id_cart){
         DB::table('cart')-> where('id_cart', $id_cart) -> delete();
         return Redirect::to('/cart/'.$id_cus);
     }

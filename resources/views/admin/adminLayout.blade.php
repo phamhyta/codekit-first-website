@@ -77,42 +77,28 @@
             <!-- sidebar menu start-->
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <li>
-                        <a class="active" href="{{ URL::to('/admin/dashboard') }}">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Tổng quan</span>
-                        </a>
-                    </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span>Danh mục sản phẩm</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ URL::to('/admin/add_category') }}">Thêm</a></li>
-                            <li><a href="{{ URL::to('/admin/all_category') }}">Liệt kê</a></li>
+                            <li><a href="{{ URL::to('/admin/add_category') }}">Thêm sản phẩm</a></li>
+                            <li><a href="{{ URL::to('/admin/add_productdetail') }}">Thêm màu, kích thước sản phẩm</a></li>
+                            <li><a href="{{ URL::to('/admin/add_voucher') }}">Thêm voucher</a></li>
+                            <li><a href="{{ URL::to('/admin/all_category') }}">Hiển thị sản phẩm</a></li>
+                            <li><a href="{{ URL::to('/admin/all_productdetail') }}">Hiển thị sản phẩm chi tiết</a></li>
+                            <li><a href="{{ URL::to('/admin/all_voucher') }}">Hiển thị voucher</a></li>
                         </ul>
                     </li>
-
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Màu, kích thước sản phẩm</span>
+                            <span>Khách hàng</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ URL::to('/admin/add_productdetail') }}">Thêm</a></li>
-                            <li><a href="{{ URL::to('/admin/all_productdetail') }}">Liệt kê</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-book"></i>
-                            <span>voucher</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="{{ URL::to('/admin/add_voucher') }}">Thêm</a></li>
-                            <li><a href="{{ URL::to('/admin/all_voucher') }}">Liệt kê</a></li>
+                            <li><a href="{{ URL::to('/admin/all_cus') }}">Hiển thị khách hàng</a></li>
+                            <li><a href="{{ URL::to('/admin/all_bill') }}">Hiện thị đơn hàng</a></li>
                         </ul>
                     </li>
                     

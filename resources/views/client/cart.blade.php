@@ -18,33 +18,31 @@
         @foreach ( $product_info as $key => $pro_inf)        
             <div class="tw-pb-5">
                 <div class=" tw-flex tw-flex-row tw-bg-gray-200">
-                    
-                        <div class="tw-w-1/4 tw-p-5">
-                            <img src="/img/anh_giay_nam/{{ $pro_inf->thumbnail }}" alt="" class="tw-border tw-border-black tw-object-contain">
+                    <div class="tw-w-1/4 tw-p-5">
+                        <img src="/img/anh_giay_nam/{{ $pro_inf->thumbnail }}" alt="" class="tw-border tw-border-black tw-object-contain">
+                    </div>
+                    <div class="tw-w-3/4 tw-px-10 tw-py-5">
+                        <div class="tw-flex tw-flex-row tw-justify-between">
+                            <ul>
+                                <li class="tw-pb-1 tw-font-bold tw-text-lg">{{ $pro_inf->product_name }}</li>
+                                <li class="tw-pb-3 tw-text-sm">{{ $pro_inf->category_name }}</li>
+                                <li class="tw-pb-2 tw-text-sm opacity-50">Color: {{$pro_inf->color_name}} </li>
+                                <li class="tw-pb-2 tw-text-sm opacity-50">Size: {{$pro_inf->product_size}}</li>
+                                <li class="tw-pb-4 tw-text-sm opacity-50">Quantity: {{$pro_inf->ammount}}</li>
+                            </ul>
+                            <div class=" tw-underline tw-font-bold tw-text-lg">{{ $pro_inf->discount }}$</div>
                         </div>
-                        <div class="tw-w-3/4 tw-px-10 tw-py-5">
-                            <div class="tw-flex tw-flex-row tw-justify-between">
-                                <ul>
-                                    <li class="tw-pb-1 tw-font-bold tw-text-lg">{{ $pro_inf->product_name }}</li>
-                                    <li class="tw-pb-3 tw-text-sm">{{ $pro_inf->category_name }}</li>
-                                    <li class="tw-pb-2 tw-text-sm opacity-50">Color: {{$pro_inf->color_name}} </li>
-                                    <li class="tw-pb-2 tw-text-sm opacity-50">Size: {{$pro_inf->product_size}}</li>
-                                    <li class="tw-pb-4 tw-text-sm opacity-50">Quantity: {{$pro_inf->ammount}}</li>
-                                </ul>
-                                <div class=" tw-underline tw-font-bold tw-text-lg">{{ $pro_inf->discount }}$</div>
-                            </div>
-                            <div>
-                                <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Add to whislist</button>
-                                <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Change</button>
-                                <form action="/cart/{{ $pro_inf->id_cus }}/{{ $pro_inf->id_cart }}" method="POST">
-                                    @csrf
-                                   
-                                    <button class=" hover:tw-text-gray-400">
-                                        Remove
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="tw-flex">
+                            <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Add to whislist</button>
+                            
+                            <form action="/delete_cart/{{ $pro_inf->id_cus }}/{{ $pro_inf->id_cart }}" method="POST">
+                                @csrf
+                                <button class=" hover:tw-text-gray-400">
+                                    Remove
+                                </button>
+                            </form>
                         </div>
+                    </div>
                     
                 </div>
             </div>
@@ -113,8 +111,6 @@
                     <div class=" tw-underline tw-font-bold tw-text-lg">160$</div>
                 </div>
                 <div>
-                    <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Add to whislist</button>
-                    <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Change</button>
                     <button class=" hover:tw-text-gray-400">Remove</button>
                 </div>
             </div>
