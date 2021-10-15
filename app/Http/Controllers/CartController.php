@@ -22,10 +22,10 @@ class CartController extends Controller
         ->join('products','productDetail.id_product',"=",'products.id_product')
         ->join('productColor','productDetail.id_color',"=",'productColor.id_color')
         ->join('productClass','products.id_class',"=",'productClass.id_class')
-        ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->paginate(16);
+        ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->get();
         $data['id_cus'] = $id_cus;
         $data['id_product_detail'] = $id_product_detail;
-        $data['amount'] = $amount;
+        $data['ammount'] = $amount;
         DB::table('cart')->insert($data);
         //dd($data);
         return view('client.cart', ['product_info' => $product_info, 'color' => $color, 'size' => $size, 'id_product' => $id_product, 'amount' => $amount]);
