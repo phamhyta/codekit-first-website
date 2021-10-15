@@ -65,30 +65,30 @@
                 @foreach ($products->unique('id_product') as $product)
                     <li class="splide__slide tw-px-5">
                         <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
-                            <div>
-                                <img src="img/anh_giay_nam/{{ $product->thumbnail }}" alt="male shoes" class="tw-w-full tw-object-contain">
-                                </div>
-                                <div class="tw-bg-gray-700 tw-flex tw-justify-between tw-w-full">
-                                <ul class="tw-w-full">
-                                    <li class="tw-pt-4 tw-w-full">
-                                        <div class="tw-flex">
-                                            <h1 class="tw-flex-auto tw-text-l tw-font-semibold tw-text-white tw-pl-2"> <!-- Tên sp -->
-                                                <p>{{ $product->product_name }}</p>
-                                            </h1>
-                                            <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-6 tw-pr-2"> <!-- Giá sau khi giảm giá -->
-                                                {{ $product->discount }}$
-                                            </div>
-                                            <div class="tw-text-sm tw-font-semibold tw-text-white tw-pl-2 tw-line-through tw-relative tw-float-left"> <!-- Giá gốc -->
-                                                {{ $product->price }}$
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="tw-w-full tw-text-sm tw-font-medium tw-text-white tw-pb-4 tw-pl-2">
-                                        {{ $product->description }}
-                                    </li>
-                                </ul>
+                            <div class="tw-h-64 tw-w-full">
+                                <img src="img/anh_giay_nam/{{ $product->thumbnail }}" alt="male shoes" class="tw-h-full tw-w-full">
                             </div>
-                        </a>                      
+                            <div class="tw-bg-gray-700 tw-flex tw-justify-between tw-w-full">
+                              <ul class="tw-w-full">
+                                <li class="tw-pt-4 tw-w-full">
+                                    <div class="tw-flex">
+                                        <h1 class="tw-flex-auto tw-text-l tw-font-semibold tw-text-white tw-pl-2"> <!-- Tên sp -->
+                                            <p>{{ $product->product_name }}</p>
+                                        </h1>
+                                        <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-8 tw-pr-1"> <!-- Giá sau khi giảm giá -->
+                                            {{ $product->discount }}$
+                                        </div>
+                                        <div class="tw-text-sm tw-font-semibold tw-text-white tw-pl-2 tw-pr-2 tw-line-through tw-relative tw-float-left"> <!-- Giá gốc -->
+                                            {{ $product->price }}$
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tw-w-full tw-text-sm tw-font-medium tw-text-white tw-pb-4 tw-pl-2">
+                                    {{ $product->description }}
+                                </li>
+                              </ul>
+                          </div>
+                        </a>                    
                     </li>
                 @endforeach
                 

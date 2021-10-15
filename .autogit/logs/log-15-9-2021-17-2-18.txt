@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 15 2021 17:02:18 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/client/home.blade.php
+* resources/views/client/productList.blade.php
+
+
+Created files:
+* .autogit/logs/log-15-9-2021-16-32-11.txt
+
+
+Deleted files:
+
+
+Renamed files:
