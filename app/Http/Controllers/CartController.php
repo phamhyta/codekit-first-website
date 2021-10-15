@@ -37,12 +37,17 @@ class CartController extends Controller
         ->join('productColor','productDetail.id_color',"=",'productColor.id_color')
         ->join('productClass','products.id_class',"=",'productClass.id_class')
         ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->get();
-        //dd($id_cus);
         $total = DB::table('cart') -> selectRaw('sum(ammount*discount) as "total"') 
         -> join('productdetail','cart.id_product_detail', '=' ,'productdetail.id_product_detail')
         ->join('products','productDetail.id_product',"=",'products.id_product') -> where('id_cus', $id_cus) -> get();
-        //dd($total);
-        //var_dump($total);
-        return view('client.cart', ['product_info' => $product_info, 'total' => $total]);
+        $products = DB::table('productDetail')
+        ->join('products','productDetail.id_product',"=",'products.id_product')
+        ->join('productColor','productDetail.id_color',"=",'productColor.id_color')
+        ->join('productClass','products.id_class',"=",'productClass.id_class')->skip(0)->take(28)->get();
+        return view('client.cart', ['product_info' => $product_info, 'total' => $total, 'products' => $products]);
+    }
+    public function delete_cart($id_cart, $id_cus){
+        DB::table('cart')-> where('id_cart', $id_cart) -> delete();
+        return Redirect::to('/cart/'.$id_cus);
     }
 }

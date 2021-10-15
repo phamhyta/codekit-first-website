@@ -36,7 +36,13 @@
                             <div>
                                 <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Add to whislist</button>
                                 <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Change</button>
-                                <button class=" hover:tw-text-gray-400">Remove</button>
+                                <form action="/cart/{{ $pro_inf->id_cus }}/{{ $pro_inf->id_cart }}" method="POST">
+                                    @csrf
+                                   
+                                    <button class=" hover:tw-text-gray-400">
+                                        Remove
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     
@@ -93,7 +99,7 @@
     <div class="tw-pb-5">
         <div class=" tw-flex tw-flex-row tw-bg-gray-200">
             <div class="tw-w-1/4 tw-p-4">
-                <img src="img/anh_giay_nam/male_shoes(1).jpg" alt="" class="tw-border tw-border-black tw-object-contain">
+                <img src="/img/anh_giay_nam/male_shoes(1).jpg" alt="" class="tw-border tw-border-black tw-object-contain">
             </div>
             <div class="tw-w-3/4 tw-px-10 tw-py-5">
                 <div class="tw-flex tw-flex-row tw-justify-between">
@@ -122,45 +128,44 @@
 </div>
 <div class="tw-border-b tw-border-gray-100 tw-pt-5"></div>
 {{-- you might like --}}
-<div class="tw-py-10">
+<div class="tw-pt-20">
     <div class="tw-flex tw-justify-center tw-mb-10">
-        <div class="tw-mx-10 tw-border-b-2 tw-border-yellow-500 tw-text-yellow-500">YOU MIGHT LIKE</div>
+        <div class="tw-mx-10 tw-border-b-2 tw-border-yellow-500 tw-text-yellow-500">BEST SELLER</div>
         <div class="tw-mx-10">SALES</div>
     </div>
     <div class="splide" id="productSlide">
         <div class="splide__track">
             <ul class="splide__list">
-                <?php
-                    for($i = 1; $i <= 9; $i++){
-                        echo '<li class="splide__slide tw-px-5">
-                                <div>
-                                    <div>
-                                        <img src="'.asset("img/anh_giay_nam/male_shoes($i).png").'" alt="male shoes" class="tw-w-full tw-object-contain">
+                @foreach ($products->unique('id_product') as $product)
+                    <li class="splide__slide tw-px-5">
+                        <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
+                            <div class="tw-h-64 tw-w-full">
+                                <img src="/img/anh_giay_nam/{{ $product->thumbnail }}" alt="male shoes" class="tw-h-full tw-w-full">
+                            </div>
+                            <div class="tw-bg-gray-700 tw-flex tw-justify-between tw-w-full">
+                              <ul class="tw-w-full">
+                                <li class="tw-pt-4 tw-w-full">
+                                    <div class="tw-flex">
+                                        <h1 class="tw-flex-auto tw-text-l tw-font-semibold tw-text-white tw-pl-2"> <!-- Tên sp -->
+                                            <p>{{ $product->product_name }}</p>
+                                        </h1>
+                                        <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-8 tw-pr-1"> <!-- Giá sau khi giảm giá -->
+                                            {{ $product->discount }}$
                                         </div>
-                                        <div class="tw-bg-gray-700 tw-flex tw-justify-between tw-w-full">
-                                        <ul class="tw-w-full">
-                                            <li class="tw-pt-4 tw-w-full">
-                                                <div class="tw-flex">
-                                                    <h1 class="tw-flex-auto tw-text-l tw-font-semibold tw-text-white tw-pl-2"> <!-- Tên sp -->
-                                                        <p>NIKE FAKE</p>
-                                                    </h1>
-                                                    <div class="tw-text-l tw-font-semibold tw-text-white tw-pl-8"> <!-- Giá sau khi giảm giá -->
-                                                        $90.00
-                                                    </div>
-                                                    <div class="tw-text-sm tw-font-semibold tw-text-white tw-pl-2 tw-line-through tw-relative tw-float-left"> <!-- Giá gốc -->
-                                                        $110.00
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="tw-w-full tw-text-sm tw-font-medium tw-text-white tw-pb-4 tw-pl-2">
-                                                Sản phẩm không chính hãng
-                                            </li>
-                                        </ul>
+                                        <div class="tw-text-sm tw-font-semibold tw-text-white tw-pl-2 tw-pr-2 tw-line-through tw-relative tw-float-left"> <!-- Giá gốc -->
+                                            {{ $product->price }}$
+                                        </div>
                                     </div>
-                                </div>                      
-                            </li>';
-                    }
-                ?>
+                                </li>
+                                <li class="tw-w-full tw-text-sm tw-font-medium tw-text-white tw-pb-4 tw-pl-2">
+                                    {{ $product->description }}
+                                </li>
+                              </ul>
+                          </div>
+                        </a>                    
+                    </li>
+                @endforeach
+                
             </ul>
         </div>
     </div>
