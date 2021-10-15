@@ -28,7 +28,7 @@ class CartController extends Controller
         $data['ammount'] = $request -> amount;
         DB::table('cart')->insert($data);
         //dd($data);
-        return Redirect::to('/client/cart/'.$id_cus);
+        return Redirect::to('/cart/'.$id_cus);
         //return view('client.cart', ['product_info' => $product_info, 'color' => $color, 'size' => $size, 'id_product' => $id_product, 'amount' => $amount]);
     }
     public function show_cart($id_cus){

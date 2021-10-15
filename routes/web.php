@@ -75,10 +75,11 @@ Route::get('/profile', [ClientController::class, 'show_profile']);
 
 
 //cart route
-Route::get('/client/cart/{id_cus}', [CartController::class, 'show_cart']);
-Route::post('/client/cart', [CartController::class, 'save_cart']);
+Route::post('/cart', [CartController::class, 'save_cart']);
+Route::get('/cart/{id_cus}', [CartController::class, 'show_cart']);
+
 
 
 
 //Pay route
-Route::get('/client/pay', [PayController::class, 'index']);
+Route::get('/pay', [PayController::class, 'index']);

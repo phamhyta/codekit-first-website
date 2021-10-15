@@ -68,7 +68,7 @@
                     {{ $products[0]->description }}
                 </div>
             </div>
-            <form action="{{ URL::to('/client/cart') }}" method="POST">
+            <form action="{{ URL::to('/cart') }}" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
@@ -176,45 +176,45 @@
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
-                        {{-- <form action="{{ URL::to('/client/pay') }}" method="GET"> 
-                        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Buy now</button> </form>
-                         --}}
                         <?php
                             // $id_cus = Session::get('id_cus');
                             // echo '
-                            //     <form action="/client/cart/'.$id_cus.'" method="GET"> 
+                            //     <form action="/cart/'.$id_cus.'" method="GET"> 
                             //     <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button> </form>
                             // '
                             // //<input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">
                             //  <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button> </form>
                         
                         ?>
-                         <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button> </form>
-                    </div>
-                    <!-- Nút thêm vào yêu thích -->
-                    <div>
-                        <button onclick="setColor()" id="btn" class="tw-flex tw-items-center tw-justify-center tw-w-full tw-h-9 tw-rounded-md tw-text-gray-400 tw-border tw-border-pink-900 tw-bg-white hover:tw-bg-gray-50" type="button" aria-label="like">
-                            <svg width="20" height="20" fill="currentColor">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                            </svg>
-                        </button>
-                        <script>
-                            var count = 1;
-                            function setColor() {
-                                var property = document.getElementById("btn");
-                                if (count == 0) {
-                                    property.style.color = "gray" 
-                                    count = 1;        
-                                }
-                                else {
-                                    property.style.color = "red"
-                                    count = 0;
-                                }
-                            }
-                        </script>
+                         <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button>
                     </div>
                 </div>
             </form>
+            <form action="{{ URL::to('/pay') }}" method="GET"> 
+                <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Buy now</button> 
+            </form>     
+            <!-- Nút thêm vào yêu thích -->
+            <div>
+                <button onclick="setColor()" id="btn" class="tw-flex tw-items-center tw-justify-center tw-w-full tw-h-9 tw-rounded-md tw-text-gray-400 tw-border tw-border-pink-900 tw-bg-white hover:tw-bg-gray-50" type="button" aria-label="like">
+                    <svg width="20" height="20" fill="currentColor">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+                    </svg>
+                </button>
+                <script>
+                    var count = 1;
+                    function setColor() {
+                        var property = document.getElementById("btn");
+                        if (count == 0) {
+                            property.style.color = "gray" 
+                            count = 1;        
+                        }
+                        else {
+                            property.style.color = "red"
+                            count = 0;
+                        }
+                    }
+                </script>
+            </div>
         </div>
     </div>
     <!-- Phần đánh giá, mô tả -->
