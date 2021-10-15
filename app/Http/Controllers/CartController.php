@@ -38,10 +38,10 @@ class CartController extends Controller
         ->join('productClass','products.id_class',"=",'productClass.id_class')
         ->join('category','products.id_category',"=",'category.id_category') ->where('id_cus', $id_cus)->get();
         //dd($id_cus);
-        $total = DB::table('cart') -> selectRaw('select sum(ammount*discount) as "total"') 
+        $total = DB::table('cart') -> selectRaw('sum(ammount*discount) as "total"') 
         -> join('productdetail','cart.id_product_detail', '=' ,'productdetail.id_product_detail')
         ->join('products','productDetail.id_product',"=",'products.id_product') -> where('id_cus', $id_cus) -> get();
-        dd($total);
+        //dd($total);
         //var_dump($total);
         return view('client.cart', ['product_info' => $product_info, 'total' => $total]);
     }
