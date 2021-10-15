@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Session;
 
 class PayController extends Controller
 {
-    public function index(){
-        return view('client.pay');
+    public function index(Request $request){
+        $discount = $request -> discount;
+        return view('client.pay',['discount' => $discount]);
     }
 }

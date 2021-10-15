@@ -110,7 +110,7 @@
                         <button data-action="decrement" type="button" class=" tw-bg-gray-50 tw-text-gray-600 hover:tw-text-gray-700 hover:tw-bg-gray-400 tw-h-full tw-w-20 tw-rounded-l tw-cursor-pointer tw-outline-none">
                             <span class="tw-m-auto tw-text-2xl tw-font-thin">−</span>
                         </button>
-                        <input type="number" class="tw-outline-none focus:tw-outline-none tw-text-center tw-w-full tw-bg-gray-50 tw-font-semibold tw-text-md hover:tw-text-black focus:tw-text-black  md:tw-text-basecursor-default tw-flex tw-items-center tw-text-gray-700" name="amount" value="0">
+                        <input type="number" class="tw-outline-none focus:tw-outline-none tw-text-center tw-w-full tw-bg-gray-50 tw-font-semibold tw-text-md hover:tw-text-black focus:tw-text-black  md:tw-text-basecursor-default tw-flex tw-items-center tw-text-gray-700" name="amount" value="1">
                         <button data-action="increment" type="button" class="tw-bg-gray-50 tw-text-gray-600 hover:tw-text-gray-700 hover:tw-bg-gray-400 tw-h-full tw-w-20 tw-rounded-r tw-cursor-pointer tw-outline-none">
                             <span class="tw-m-auto tw-text-2xl tw-font-thin">+</span>
                         </button>
@@ -190,8 +190,11 @@
                     </div>
                 </div>
             </form>
-            <form action="{{ URL::to('/pay') }}" method="GET"> 
+            <form action="{{ URL::to('/pay') }}" method="POST"> 
+                @csrf
                 <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-gray-900 hover:tw-bg-gray-50" type="submit">Buy now</button> 
+                <input type="hidden" value="{{ $products[0]->discount }}" name="discount" class="form-control">
+                
             </form>     
             <!-- Nút thêm vào yêu thích -->
             <div>

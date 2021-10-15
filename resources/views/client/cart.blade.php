@@ -44,6 +44,7 @@
         </div>
         
     </div>
+    {{-- bill --}}
     <div class="tw-w-1/4 tw-flex tw-flex-col tw-mr-20 tw-pt-20">
         <div class="tw-flex tw-flex-row tw-pb-5">
             <div class="w-1/2">
@@ -56,7 +57,9 @@
                 Subtotal
             </div>
             <div>
-                320$
+                @foreach ( $product_info as $pro_inf )
+                    {{ $pro_inf->discount }}
+                @endforeach
             </div>
         </div>
         <div class="tw-flex tw-flex-row tw-justify-between tw-pb-5">
@@ -81,7 +84,7 @@
         <button class="tw-py-4 tw-px-2 tw-border-black tw-text-white tw-bg-black hover:tw-bg-gray-200 hover:tw-text-black hover:tw-border-gray-200">CHECK OUT</button>
     </div>
 </div>
-
+{{-- wishlist --}}
 <div class="tw-w-2/3 tw-pt-20 tw-pl-5 tw-pr-20">
     <div class=" tw-text-4xl tw-font-bold tw-pb-8">
         Wishlist
@@ -117,7 +120,7 @@
     </div>
 </div>
 <div class="tw-border-b tw-border-gray-100 tw-pt-5"></div>
-
+{{-- you might like --}}
 <div class="tw-py-10">
     <div class="tw-flex tw-justify-center tw-mb-10">
         <div class="tw-mx-10 tw-border-b-2 tw-border-yellow-500 tw-text-yellow-500">YOU MIGHT LIKE</div>

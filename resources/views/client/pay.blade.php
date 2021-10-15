@@ -207,7 +207,7 @@
         <div class="tw-pt-6">ORDER SUMARY</div>
         <div class="tw-flex tw-pt-6">
             <div class="tw-w-1/2">Subtotal</div>
-            <div class="tw-w-1/2 tw-text-right">200$</div>  
+            <div class="tw-w-1/2 tw-text-right">{{ $discount }}</div>  
         </div>
         <div class="tw-flex tw-py-6">
             <div class="tw-w-1/2">Delivery</div>
@@ -215,7 +215,7 @@
         </div>
         <div class="tw-flex tw-py-6 tw-border-t-2 tw-border-black mb-6">
             <div class="tw-w-1/2">Total</div>
-            <div class="tw-w-1/2 tw-text-right">200$</div>
+            <div class="tw-w-1/2 tw-text-right">{{ $discount }}</div>
         </div>
         <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Checkout</button>
     </div>

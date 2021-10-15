@@ -82,4 +82,4 @@ Route::get('/cart/{id_cus}', [CartController::class, 'show_cart']);
 
 
 //Pay route
-Route::get('/pay', [PayController::class, 'index']);
+Route::post('/pay', [PayController::class, 'index']);
