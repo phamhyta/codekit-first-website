@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productdetailController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PayController;
+use App\Http\Controllers\CusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,3 +84,6 @@ Route::post('/delete_cart/{id_cus}/{id_cart}', [CartController::class, 'delete_c
 
 //Pay route
 Route::post('/pay', [PayController::class, 'index']);
+
+//admin customer
+Route::get('/admin/all_cus', [CusController::class, 'all_cus']);

@@ -8,10 +8,10 @@
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
           <select class="input-sm form-control w-sm inline v-middle">
-            <option value="0">Thể thao</option>
-            <option value="1">Du lịch</option>
-            <option value="2">Trong nhà</option>
-            <option value="3">Đi học</option>
+            <option value="0">Họ tên</option>
+            <option value="1">Email</option>
+            <option value="2">SĐT</option>
+            <option value="3">Username</option>
           </select>
           <button class="btn btn-sm btn-default">Apply</button>                
         </div>
@@ -37,14 +37,14 @@
               </th>
               <th>Username</th>
               <th>Email</th>
-              <th>Full_name</th>
+              <th>Họ Tên</th>
               <th>SĐT</th>
               <th>Địa chỉ</th>
               <th style="width:30px;"></th>
             </tr> 
           </thead>
           <tbody>
-            @foreach ( $all_category as $key => $cate_pro)
+            @foreach ( $all_cus as $cus)
             <tr>
               <th style="width:20px;">
                 {{-- <label class="i-checks m-b-none">
@@ -52,44 +52,11 @@
                 </label> --}}
               </th>
               {{-- <td>0p<label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td> --}}
-              <td>{{ $cate_pro-> product_name }}</td>
-              <td>
-                <?php
-                  if($cate_pro-> id_category==1){
-                    echo 'Thể thao';
-                  }
-                  if($cate_pro-> id_category==2){
-                    echo 'Du lịch';
-                  }
-                  if($cate_pro-> id_category==3){
-                    echo 'Trong nhà';
-                  }
-                  if($cate_pro-> id_category==4){
-                    echo 'Đi học';
-                  }
-                ?>
-              </td>
-              <td>{{ $cate_pro-> description }}</td>
-              <td>
-                <?php
-                  if($cate_pro-> id_class==1){
-                    echo 'Nam';
-                  }
-                  if($cate_pro-> id_class==2){
-                    echo 'Nữ';
-                  }
-                  if($cate_pro-> id_class==3){
-                    echo 'Trẻ em';
-                  }
-                ?>
-              </td>
-              <td>{{ $cate_pro-> price }}</td>
-              <td>{{ $cate_pro-> discount }}</td>
-              <td>
-                <a href="{{ URL::to('/admin/edit_category/'.$cate_pro ->id_product) }}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i>
-                <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này?')" href="{{ URL::to('/admin/delete_category/'.$cate_pro->id_product) }}" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>  
-              </a>
-              </td>
+              <td>{{ $cus-> username }}</td>
+              <td>{{ $cus-> email }}</td>
+              <td>{{ $cus-> full_name }}</td>
+              <td>{{ $cus-> phone_number }}</td>
+              <td>{{ $cus-> address }}</td>
             </tr>
             @endforeach
           </tbody>
@@ -98,7 +65,7 @@
       <footer class="panel-footer">
         <div class="row">
           <div class="tw-text-center">
-            {{ $all_category->links() }}
+            {{ $all_cus->links() }}
           </div>
         </div>
       </footer>

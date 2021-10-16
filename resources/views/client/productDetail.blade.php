@@ -169,23 +169,9 @@
                       btn.addEventListener("click", increment);
                     });
                 </script>
-                {{-- <div class="tw-pb-8">
-                    <label for="amount">Số lượng:</label>
-                    <input class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" type="number" name="amount" id="amount" value="1">
-                </div> --}}
                 <!-- Thanh thêm vào giỏ hàng, mua ngay -->
                 <div class="tw-mb-2 tw-text-sm tw-font-medium">
                     <div class="">
-                        <?php
-                            // $id_cus = Session::get('id_cus');
-                            // echo '
-                            //     <form action="/cart/'.$id_cus.'" method="GET"> 
-                            //     <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button> </form>
-                            // '
-                            // //<input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">
-                            //  <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button> </form>
-                        
-                        ?>
                          <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Add to bag</button>
                     </div>
                 </div>
@@ -249,7 +235,7 @@
                     <div class="ttw-ext-xl tw-font-medium tw-text-gray-700">
                         Thông số:
                     </div>
-                    <div class="ftw-lex">
+                    <div class="tw-flex">
                         <div class="tw-h-full tw-w-1/2 tw-ml-4 tw-list-inside">
                             <li>Dánh regular fit</li>
                             <li>Có dây buộc</li>
