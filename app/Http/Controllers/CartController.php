@@ -16,7 +16,7 @@ class CartController extends Controller
         $data['id_cus'] = $request -> id_cus;
         $data['id_product_detail'] = $request->id_product_detail;
         $data['ammount'] = $request -> amount;
-        $data['id_status'] = 0;
+        $data['id_status'] = 0; 
         DB::table('cart')->insert($data);
         DB::table('admin_cart') ->insert($data);
         return Redirect::to('/cart/'.$id_cus);

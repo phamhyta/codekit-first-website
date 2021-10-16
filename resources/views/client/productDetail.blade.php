@@ -68,7 +68,7 @@
                     {{ $products[0]->description }}
                 </div>
             </div>
-            <form action="{{ URL::to('/cart') }}" method="POST">
+            <form action="/cart" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
@@ -93,7 +93,7 @@
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6 tw-flex-wrap tw-font-normal tw-justify-center tw-inline-block tw-relative">
                     <select name="size" class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline">
                         <option>Size:</option>
-                        @foreach ($componentList as $component)
+                        @foreach ($products as $component)
                             <option>{{ $component->product_size }}</option>
                         @endforeach
                     </select>
