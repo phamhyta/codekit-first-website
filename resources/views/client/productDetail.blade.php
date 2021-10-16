@@ -68,7 +68,7 @@
                     {{ $products[0]->description }}
                 </div>
             </div>
-            <form action="/cart" method="POST">
+            <form action="/cart/{{ $id_product }}/{{ $id_product_detail }}" method="POST">
                 {{ csrf_field() }}
                 <!-- Thanh chọn màu -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6">
@@ -77,9 +77,9 @@
                             <a  href="/{{ $productName }}/{{ $component->id_product }}/{{ $component->id_product_detail }}/{{ $component->color_name }}">
                                 <img src="/img/anh_giay_nam/{{ $component->thumbnail }}" alt="" class="tw-p-1">
                             </a>
-                            <input type="hidden" value="{{$component->color_name}}" name="color" class="form-control">
+                            {{-- <input type="hidden" value="{{$component->color_name}}" name="color" class="form-control">
                             <input type="hidden" value="{{$component->id_product}}" name="id_product" class="form-control">
-                            <input type="hidden" value="{{$component->id_product_detail}}" name="id_product_detail" class="form-control">
+                            <input type="hidden" value="{{$component->id_product_detail}}" name="id_product_detail" class="form-control"> --}}
                         @endforeach
                     </div>
                 </div>
@@ -88,7 +88,6 @@
                     echo'
                     <input type="hidden" value="'.$id_cus.'" name="id_cus" class="form-control">'
                 ?>
-                
                 <!-- Thanh chọn size -->
                 <div class="tw-flex tw-items-baseline tw-mt-4 tw-mb-6 tw-flex-wrap tw-font-normal tw-justify-center tw-inline-block tw-relative">
                     <select name="size" class="tw-block tw-pl-2 tw-appearance-none tw-w-full tw-bg-white tw-border-b tw-border-gray-400 hover:tw-border-gray-700 tw-py-1 tw-rounded tw-shadow tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline">

@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
-    public function save_cart(Request $request){
+    public function save_cart(Request $request, $id_product , $id_product_detail){
         $id_cus = $request -> id_cus;
         $data['id_cus'] = $request -> id_cus;
-        $data['id_product_detail'] = $request->id_product_detail;
+        $data['id_product_detail'] = $id_product_detail;
         $data['ammount'] = $request -> amount;
         $data['id_status'] = 0; 
+        //dd($data);
         DB::table('cart')->insert($data);
         DB::table('admin_cart') ->insert($data);
         return Redirect::to('/cart/'.$id_cus);

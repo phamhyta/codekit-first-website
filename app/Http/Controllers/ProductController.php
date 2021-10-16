@@ -42,7 +42,7 @@ class ProductController extends Controller
         ->where('id_product','=',$id_product)
         ->get(); //phục vụ cho hiểm thị hình ảnh dựa theo màu sắc, hiểm thị list màu và size của sản phẩm
 
-        return view('client.productDetail', ['products' => $products, 'componentList' => $componentList, 'productName' => $product_name, 'productList' => $productList]);
+        return view('client.productDetail', ['products' => $products, 'id_product' => $id_product, 'id_product_detail' => $id_product_detail, 'componentList' => $componentList, 'productName' => $product_name, 'productList' => $productList]);
     }
 
     public function showByColor($product_name, $id_product, $id_product_detail, $color_name){
@@ -63,6 +63,6 @@ class ProductController extends Controller
         ->where('id_product','=',$id_product)
         ->get(); //phục vụ cho hiểm thị hình ảnh dựa theo màu sắc, hiểm thị list màu và size của sản phẩm
 
-        return view('client.productDetail', ['products' => $products, 'componentList' => $componentList, 'productName' => $product_name, 'productList' => $productList, 'colorName'=>$color_name]);
+        return view('client.productDetail', ['products' => $products, 'id_product' => $id_product, 'id_product_detail' => $id_product_detail, 'componentList' => $componentList, 'productName' => $product_name, 'productList' => $productList, 'colorName'=>$color_name]);
     }
 }
