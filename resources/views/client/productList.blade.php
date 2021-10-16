@@ -165,7 +165,7 @@
       </div>
       <div class="tw-flex-col tw-justify-center tw-items-center">
           <ul class="tw-flex tw-flex-wrap tw-font-normal tw-w-full">
-            @foreach ($products->unique('id_product') as $product)
+            @foreach ($products as $product)
               <li class="tw-my-5 tw-pr-5 tw-ml-0 tw-w-1/4 tw-h-full">
                 <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
                     <div class="tw-h-60 tw-w-full">

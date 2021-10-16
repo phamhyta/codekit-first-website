@@ -67,12 +67,12 @@ class categoryController extends Controller
         $data['discount'] = $request -> discount;
         DB::table('products')->where('id_product', $id_product) -> update($data);
         Session::put('category_noti', 'Cập nhật sản phẩm thành công');
-        return Redirect::to('/admin/all_category');
+        return Redirect::to('/admin/edit_category/'.$id_product);
     }
     public function delete_category($id_product){
         $this-> Authlogin();
         DB::table('products')-> where('id_product', $id_product) -> delete();
-        Session::put('category_noti', 'Xóa sản phẩm thành công');
+        //Session::put('category_noti', 'Xóa sản phẩm thành công');
         return Redirect::to('/admin/all_category');
     }
 }

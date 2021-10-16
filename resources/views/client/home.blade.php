@@ -62,7 +62,7 @@
     <div class="splide" id="productSlide">
         <div class="splide__track">
             <ul class="splide__list">
-                @foreach ($products->unique('id_product') as $product)
+                @foreach ($products as $product)
                     <li class="splide__slide tw-px-5">
                         <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
                             <div class="tw-h-64 tw-w-full">

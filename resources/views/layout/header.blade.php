@@ -93,34 +93,37 @@
                 <li><a class="tw-px-4">Help</a></li>
                 <?php
                     $username = Session::get('username');
+                    $id_cus = Session::get('id_cus');
                     if($username){
-                        echo '<li>
-                                <div x-data="{show: false}" @click.away="show = false">
-                                  <button @click="show = ! show" class="tw-block tw-text-black tw-overflow-hidden">
-                                      <div class="tw-flex tw-justify-between">
-                                          <div class=" tw-flex tw-items-center">
-                                            <i class="far fa-user tw-pr-2"></i>
-                                              Hi, '.$username.'
-                                            <svg class="tw-fill-current tw-text-black" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                                                <path d="M7 10l5 5 5-5z" />
-                                                <path d="M0 0h24v24H0z" fill="none" />
-                                            </svg>
-                                          </div> 
-                                          
-                                      </div>
-                                  </button>
-                                  <div x-show="show" class="tw-mt-2 tw-py-2 tw-bg-white tw-rounded-lg tw-shadow-xl tw-absolute tw-z-50">
-                                      <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
-                                        Profile
-                                        <i class="fas fa-user-edit"></i>
-                                      </a> 
-                                      <a href="/logout" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
-                                        Sign out
-                                        <i class="fas fa-sign-out-alt"></i>
-                                      </a>
-                                  </div>
+                      echo '
+                        <li> <a class="tw-px-4" href = "/cart/'.$id_cus.'"> <i class="fas fa-shopping-cart"></i> </a> </li>
+                        <li>
+                          <div x-data="{show: false}" @click.away="show = false">
+                            <button @click="show = ! show" class="tw-block tw-text-black tw-overflow-hidden">
+                                <div class="tw-flex tw-justify-between">
+                                    <div class=" tw-flex tw-items-center">
+                                      <i class="far fa-user tw-pr-2"></i>
+                                        Hi, '.$username.'
+                                      <svg class="tw-fill-current tw-text-black" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                          <path d="M7 10l5 5 5-5z" />
+                                          <path d="M0 0h24v24H0z" fill="none" />
+                                      </svg>
+                                    </div> 
+                                    
                                 </div>
-                              </li>';
+                            </button>
+                            <div x-show="show" class="tw-mt-2 tw-py-2 tw-bg-white tw-rounded-lg tw-shadow-xl tw-absolute tw-z-50">
+                                <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
+                                  Profile
+                                  <i class="fas fa-user-edit"></i>
+                                </a> 
+                                <a href="/logout" class="tw-block tw-px-4 tw-py-2 tw-text-gray-600  hover:tw-text-black">
+                                  Sign out
+                                  <i class="fas fa-sign-out-alt"></i>
+                                </a>
+                            </div>
+                          </div>
+                        </li>';
                         //session::put('username', null);
                     }
                     else {

@@ -60,7 +60,13 @@ Route::post('/admin/update_voucher/{id_voucher}', [voucherController::class, 'up
 Route::get('/admin/delete_voucher/{id_voucher}', [voucherController::class, 'delete_voucher']);
 
 
-
+//admin customer
+Route::get('/admin/all_cus', [CusController::class, 'all_cus']);
+Route::get('/admin/all_bill', [CusController::class, 'all_bill']);
+Route::get('/admin/bill_detail/{id_bill_detail}', [CusController::class, 'bill_detail']);
+Route::get('/admin/edit_bill/{id_bill_detail}', [CusController::class, 'edit_bill']);
+Route::post('/admin/update_bill/{id_bill_detail}', [CusController::class, 'update_bill']);
+Route::get('/admin/delete_bill/{id_bill_detail}', [CusController::class, 'delete_bill']);
 
 //client route
 Route::get('/', [ProductController::class, 'home']);
@@ -79,11 +85,11 @@ Route::get('/profile', [ClientController::class, 'show_profile']);
 Route::post('/cart', [CartController::class, 'save_cart']);
 Route::get('/cart/{id_cus}', [CartController::class, 'show_cart']);
 Route::post('/delete_cart/{id_cus}/{id_cart}', [CartController::class, 'delete_cart']);
-
+Route::get('/create_bill/{id_cus}', [CartController::class, 'creat_billdetail']);
+Route::get('/bill/{id_cus}', [CartController::class, 'save_bill']);
 
 
 //Pay route
 Route::post('/pay', [PayController::class, 'index']);
 
-//admin customer
-Route::get('/admin/all_cus', [CusController::class, 'all_cus']);
+

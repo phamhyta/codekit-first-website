@@ -84,10 +84,12 @@
             </div>
         </div>
         <button class="tw-py-4 tw-px-2 tw-border-black tw-text-white tw-bg-black hover:tw-bg-gray-200 hover:tw-text-black hover:tw-border-gray-200">
-            <a href="/">CHECK OUT</a>
+                @foreach($cus_info as $cus_info)
+                    <a href="/create_bill/{{$cus_info ->id_cus}}">CHECK OUT</a>
+                @endforeach
         </button>
     </div>
-    @endforeach
+    @endforeach 
 </div>
 {{-- wishlist --}}
 <div class="tw-w-2/3 tw-pt-20 tw-pl-5 tw-pr-20">
@@ -132,7 +134,7 @@
     <div class="splide" id="productSlide">
         <div class="splide__track">
             <ul class="splide__list">
-                @foreach ($products->unique('id_product') as $product)
+                @foreach ($products as $product)
                     <li class="splide__slide tw-px-5">
                         <a href="/{{ $product->product_name }}/{{ $product->id_product }}/{{ $product->id_product_detail }}">
                             <div class="tw-h-64 tw-w-full">
@@ -179,36 +181,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 @endsection
 
-
-
-
-<?php
-        //   for($i = 1; $i <= 2; $i++){
-        //         echo '<div class="tw-pb-5">
-        //                 <div class=" tw-flex tw-flex-row tw-bg-gray-200">
-        //                     @foreach ( $product_info as $key => $pro_inf)
-        //                     <div class="tw-w-1/4 tw-p-5">
-        //                         <img src="img/anh_giay_nam/male_shoes('.$i.').png" alt="" class="tw-border tw-border-black tw-object-contain">
-        //                     </div>
-        //                     <div class="tw-w-3/4 tw-px-10 tw-py-5">
-        //                         <div class="tw-flex tw-flex-row tw-justify-between">
-        //                             <ul>
-        //                                 <li class="tw-pb-1 tw-font-bold tw-text-lg">{{ $pro_inf-> product_name }}</li>
-        //                                 <li class="tw-pb-3 tw-text-sm">{{ $pro_inf-> category_name }}</li>
-        //                                 <li class="tw-pb-2 tw-text-sm opacity-50">Color: $color </li>
-        //                                 <li class="tw-pb-2 tw-text-sm opacity-50">Size: </li>
-        //                                 <li class="tw-pb-4 tw-text-sm opacity-50">Quantity 1</li>
-        //                             </ul>
-        //                             <div class=" tw-underline tw-font-bold tw-text-lg">160$</div>
-        //                         </div>
-        //                         <div>
-        //                             <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Add to whislist</button>
-        //                             <button class="tw-border-r tw-border-black tw-pr-3 tw-mr-2 hover:tw-text-gray-400">Change</button>
-        //                             <button class=" hover:tw-text-gray-400">Remove</button>
-        //                         </div>
-        //                     </div>
-        //                     @endforeach
-        //                 </div>
-        //             </div>';
-        //     }
-        // ?>

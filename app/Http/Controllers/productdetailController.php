@@ -87,13 +87,13 @@ class productdetailController extends Controller
         }
         DB::table('productdetail')->where('id_product_detail', $id_product_detail) -> update($data);
         Session::put('detail_noti', 'Cập nhật sản phẩm thành công');
-        return Redirect::to('/admin/all_productdetail');
+        return Redirect::to('/admin/edit_productdetail/'.$id_product_detail);
     }
     
     public function delete_productdetail($id_product_detail){
         $this-> Authlogin();
         DB::table('productdetail')->where('id_product_detail', $id_product_detail) -> delete();
-        Session::put('detail_noti', 'Xóa nhật sản phẩm thành công');
+        // Session::put('detail_noti', 'Xóa nhật sản phẩm thành công');
         return Redirect::to('/admin/all_productdetail');
     }
 }

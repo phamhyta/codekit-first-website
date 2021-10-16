@@ -65,12 +65,12 @@ class voucherController extends Controller
         $data['HSD'] = $request -> HSD;
         DB::table('voucher')->where('id_voucher', $id_voucher) -> update($data);
         Session::put('voucher_noti', 'Cập nhật voucher thành công');
-        return Redirect::to('/admin/all_voucher');
+        return Redirect::to('/admin/edit_voucher/'.$id_voucher);
     }
     public function delete_voucher($id_voucher){
         $this -> Authlogin();
         DB::table('voucher')->where('id_voucher', $id_voucher) -> delete();
-        Session::put('voucher_noti', 'Xóa nhật voucher thành công');
+        //Session::put('voucher_noti', 'Xóa nhật voucher thành công');
         return Redirect::to('/admin/all_voucher');
     }
 }
