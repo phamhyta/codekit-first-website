@@ -60,7 +60,7 @@
               <td>{{ $bill-> status_name }}</td>
               <td>
                 <a href="{{ URL::to('/admin/edit_bill/'.$bill ->id_bill_detail) }}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i>
-                <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này?')" href="{{ URL::to('/admin/delete_bill/'.$bill ->id_bill_detail) }}" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>  
+                <a onclick="return confirm('Bạn có chắc là muốn xóa bill này?')" href="{{ URL::to('/admin/delete_bill/'.$bill ->id_bill_detail) }}" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>  
               </a>
               </td>
             </tr>

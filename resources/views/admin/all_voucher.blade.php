@@ -52,7 +52,7 @@
               <td>{{ $cate_pro-> HSD }}</td>
               <td>
                 <a href="{{ URL::to('/admin/edit_voucher/'.$cate_pro ->id_voucher) }}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i>
-                <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này?')" href="{{ URL::to('/admin/delete_voucher/'.$cate_pro->id_voucher) }}" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>  
+                <a onclick="return confirm('Bạn có chắc là muốn xóa voucher này?')" href="{{ URL::to('/admin/delete_voucher/'.$cate_pro->id_voucher) }}" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>  
               </a>
               </td>
             </tr>
