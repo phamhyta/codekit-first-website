@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun Oct 17 2021 08:12:09 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/admin/all_bill.blade.php
+* resources/views/admin/all_voucher.blade.php
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
