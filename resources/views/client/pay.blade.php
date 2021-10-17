@@ -217,7 +217,9 @@
             <div class="tw-w-1/2">Total</div>
             <div class="tw-w-1/2 tw-text-right">{{ $discount }}</div>
         </div>
-        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">Checkout</button>
+        <button class="tw-w-full tw-py-2 tw-mb-2 tw-items-center tw-justify-center tw-rounded-md tw-bg-black tw-text-white hover:tw-bg-gray-800" type="submit">
+            <a href="/">Checkout</a>
+        </button>
     </div>
 </div>
 @endsection

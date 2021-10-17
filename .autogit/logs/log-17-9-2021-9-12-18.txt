@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Sun Oct 17 2021 09:12:18 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* public/img/anh_giay_nam/male_shoes(34).jpg
+
+
+Created files:
+* .autogit/logs/log-17-9-2021-8-42-10.txt
+
+
+Deleted files:
+
+
+Renamed files:
