@@ -21,5 +21,5 @@ class HomeController extends Controller
             -> where('product_name','like', '%' . $keywords . '%');
         })->join('productColor','productdetail.id_color',"=",'productColor.id_color')-> get();
         return view('client.search',['search_product'=> $search_product]);
-    }
-}
+    } 
+} 

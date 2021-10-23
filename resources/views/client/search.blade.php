@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('layout.header') 
 @section('content')
   <div class="tw-mx-5 tw-mt-16">
     <div class="tw-font-bold tw-text-3xl tw-pb-10 tw-text-center ">
