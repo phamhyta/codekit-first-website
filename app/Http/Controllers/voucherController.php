@@ -1,18 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-// use App\Models\User;
-// use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-
-// use Illuminate\Auth\Events\Login;
-// use Illuminate\Support\Facades\Redirect;
 session_start();
-// use GrahamCampbell\ResultType\Result;
 use Illuminate\Support\Facades\Session;
 class voucherController extends Controller
 {

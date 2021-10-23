@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-//use App\Models\User;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Redirect;
 session_start();
-//use GrahamCampbell\ResultType\Result;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
